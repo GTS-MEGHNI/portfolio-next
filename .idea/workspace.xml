@@ -6,7 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="1305cf25-897f-4073-bbc9-96e23a579159" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bun.lock" beforeDir="false" afterPath="$PROJECT_DIR$/bun.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Projects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Projects.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/AnimatedSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/AnimatedSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/EmailSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/EmailSidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/SocialSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/SocialSidebar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="62" />
+    <option name="cachedIndexableFilesCount" value="61" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -110,7 +117,7 @@
       <workItem from="1773604926248" duration="8138000" />
       <workItem from="1773645984429" duration="1455000" />
       <workItem from="1773649149261" duration="4056000" />
-      <workItem from="1773676696101" duration="11267000" />
+      <workItem from="1773676696101" duration="13924000" />
     </task>
     <servers />
   </component>

@@ -1,5 +1,3 @@
-'use client'
-
 import { Github, Linkedin } from 'lucide-react'
 import { SOCIAL } from '@/lib/constants'
 

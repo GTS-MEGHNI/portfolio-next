@@ -1,5 +1,3 @@
-'use client'
-
 import { SITE } from '@/lib/constants'
 
 export function EmailSidebar() {
