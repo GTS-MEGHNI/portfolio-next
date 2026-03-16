@@ -16,7 +16,14 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            cd /srv/portfolio
+            set -e
+            APP_DIR=/srv/portfolio
+            REPO_URL=https://github.com/${{ github.repository }}.git
+            if [ ! -d "$APP_DIR/.git" ]; then
+              mkdir -p "$APP_DIR"
+              git clone "$REPO_URL" "$APP_DIR"
+            fi
+            cd "$APP_DIR"
             git pull origin main
             docker compose build --no-cache
             docker compose up -d
