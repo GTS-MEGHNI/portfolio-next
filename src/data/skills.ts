@@ -8,7 +8,7 @@ export const skills: SkillPillar[] = [
   {
     name: 'Backend',
     icon: 'Server',
-    skills: ['Laravel', 'PHP', 'Node.js', 'REST API', 'GraphQL', 'PostgreSQL', 'MySQL', 'Redis', 'WebSockets'],
+    skills: ['Laravel', 'PHP', 'Node.js', 'REST API', 'GraphQL', 'PostgreSQL', 'MySQL', 'SQL Server', 'Redis', 'WebSockets'],
   },
   {
     name: 'DevOps & Infra',
@@ -18,6 +18,6 @@ export const skills: SkillPillar[] = [
   {
     name: 'Architecture',
     icon: 'Layers',
-    skills: ['Solution Architecture', 'Microservices', 'API Design', 'Database Design', 'System Design', 'Performance Optimization', 'Security Hardening'],
+    skills: ['Solution Architecture', 'API Design', 'Database Design', 'System Design', 'Performance Optimization', 'Security Hardening', 'Test Driven Development'],
   },
 ]

@@ -5,17 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1305cf25-897f-4073-bbc9-96e23a579159" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/profile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/apple-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.claude/settings.local.json" beforeDir="false" afterPath="$PROJECT_DIR$/.claude/settings.local.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bun.lock" beforeDir="false" afterPath="$PROJECT_DIR$/bun.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Projects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Projects.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/projects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/projects.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/skills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/skills.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="61" />
+    <option name="cachedIndexableFilesCount" value="62" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -33,10 +28,10 @@
     <commands />
     <urls />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="3AzokUok6InMefUTPxd09bYkkPk" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -59,7 +54,7 @@
     "javascript.preferred.runtime.type.id": "bun",
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
-    "last_opened_file_path": "C:/Users/MEGHN/OneDrive/Bureau/Projects/portfolio/public",
+    "last_opened_file_path": "C:/Users/MEGHN/OneDrive/Bureau/Projects/portfolio",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -70,10 +65,11 @@
   }
 }]]></component>
   <component name="RecapUselessUpdatesCounter">
-    <option name="suspendCountdown" value="7" />
+    <option name="suspendCountdown" value="1" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\MEGHN\OneDrive\Bureau\Projects\portfolio" />
       <recent name="C:\Users\MEGHN\OneDrive\Bureau\Projects\portfolio\public" />
       <recent name="C:\Users\MEGHN\OneDrive\Bureau\Projects\portfolio\src\app" />
     </key>
@@ -115,7 +111,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1773604909544</updated>
-      <workItem from="1773604926248" duration="7833000" />
+      <workItem from="1773604926248" duration="8138000" />
+      <workItem from="1773645984429" duration="1455000" />
+      <workItem from="1773649149261" duration="4056000" />
+      <workItem from="1773676696101" duration="8003000" />
     </task>
     <servers />
   </component>
