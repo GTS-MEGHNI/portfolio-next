@@ -1,18 +1,18 @@
 # ────────────────────────────────────────────
 # Stage 1 – Install dependencies
 # ────────────────────────────────────────────
-FROM oven/bun:1-alpine AS deps
+FROM node:22-alpine AS deps
 WORKDIR /app
 
 RUN apk add --no-cache ca-certificates
 
-COPY package.json bun.lock ./
-RUN bun install --frozen-lockfile
+COPY package.json package-lock.json ./
+RUN npm ci
 
 # ────────────────────────────────────────────
 # Stage 2 – Build
 # ────────────────────────────────────────────
-FROM oven/bun:1-alpine AS builder
+FROM node:22-alpine AS builder
 WORKDIR /app
 
 RUN apk add --no-cache ca-certificates
@@ -22,12 +22,12 @@ ENV NEXT_TELEMETRY_DISABLED=1
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-RUN bun run next build --webpack
+RUN npm run build
 
 # ────────────────────────────────────────────
 # Stage 3 – Production runner
 # ────────────────────────────────────────────
-FROM oven/bun:1-alpine AS runner
+FROM node:22-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
@@ -45,4 +45,4 @@ USER nextjs
 
 EXPOSE 3000
 
-CMD ["bun", "server.js"]
+CMD ["node", "server.js"]
