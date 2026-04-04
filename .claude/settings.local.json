@@ -1,9 +1,0 @@
-{
-  "defaultMode": "plan",
-  "permissions": {
-    "allow": [
-      "Bash(find:*)",
-      "Bash(cd:*)"
-    ]
-  }
-}
