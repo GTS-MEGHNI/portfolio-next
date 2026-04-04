@@ -74,3 +74,9 @@ Required repository secrets:
 - `VPS_HOST`
 - `VPS_USER`
 - `VPS_SSH_KEY`
+
+## License and Usage
+
+This project is licensed under the MIT License. See [LICENSE](./LICENSE).
+
+You can use this portfolio as a template for your own site. If you reuse it, replace personal content and assets (name, bio, resume, contact info, social links, and images) before publishing.
