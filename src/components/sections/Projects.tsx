@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from 'react'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { StackTag } from '@/components/ui/StackTag'
@@ -38,9 +41,9 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
 }
 
 export function Projects() {
-  const visibleProjects = projects.slice(0, PAGE_SIZE)
-  const remainingProjects = projects.slice(PAGE_SIZE)
-  const hasMore = remainingProjects.length > 0
+  const [showAll, setShowAll] = useState(false)
+  const displayed = showAll ? projects : projects.slice(0, PAGE_SIZE)
+  const remaining = projects.length - PAGE_SIZE
 
   return (
     <section id="projects" aria-labelledby="projects-heading" className="py-24 px-6 bg-surface/30">
@@ -50,25 +53,26 @@ export function Projects() {
           <h2 className="text-3xl font-bold text-primary mb-12">Selected work</h2>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {visibleProjects.map((project) => (
+            {displayed.map((project) => (
               <ProjectCard key={project.title} project={project} />
             ))}
           </div>
 
-          {hasMore && (
-            <details className="mt-12">
-              <summary className="details-summary mx-auto w-fit px-4 py-2 rounded-lg border border-border text-sm font-medium text-primary hover:border-accent hover:text-accent transition-colors cursor-pointer select-none">
-                Load more
-              </summary>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-                {remainingProjects.map((project) => (
-                  <ProjectCard key={project.title} project={project} />
-                ))}
-              </div>
-              <p className="text-xs text-muted font-mono mt-4 text-center">
-                {projects.length} total projects
-              </p>
-            </details>
+          {!showAll && remaining > 0 && (
+            <div className="mt-12 flex justify-center">
+              <button
+                onClick={() => setShowAll(true)}
+                className="px-4 py-2 rounded-lg border border-border text-sm font-medium text-primary hover:border-accent hover:text-accent transition-colors cursor-pointer"
+              >
+                Load more ({remaining})
+              </button>
+            </div>
+          )}
+
+          {showAll && (
+            <p className="text-xs text-muted font-mono mt-4 text-center">
+              {projects.length} total projects
+            </p>
           )}
         </AnimatedSection>
       </div>
