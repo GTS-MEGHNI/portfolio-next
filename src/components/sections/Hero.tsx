@@ -11,7 +11,7 @@ export function Hero() {
     >
       <div className="max-w-3xl">
         <Image
-          src="/profile.png"
+          src="/profile.webp"
           alt="Mohamed El Amine Meghni"
           width={120}
           height={120}
