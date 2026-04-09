@@ -23,9 +23,18 @@ export function Skills() {
             {skills.map((pillar) => {
               const Icon = iconMap[pillar.icon as IconName]
               return (
-                <div key={pillar.name} className="bg-surface border border-border rounded-lg p-6">
+                <div
+                  key={pillar.name}
+                  className="group bg-surface border border-border rounded-lg p-6 hover:-translate-y-1 hover:border-accent/50 hover:shadow-[0_8px_30px_rgba(34,211,238,0.08)] transition-all duration-200"
+                >
                   <div className="flex items-center gap-3 mb-4">
-                    {Icon && <Icon size={20} className="text-accent" aria-hidden="true" />}
+                    {Icon && (
+                      <Icon
+                        size={20}
+                        className="text-accent group-hover:scale-110 transition-transform duration-200"
+                        aria-hidden="true"
+                      />
+                    )}
                     <h3 className="font-semibold text-primary">{pillar.name}</h3>
                   </div>
                   <ul aria-label={`${pillar.name} tech stack`} className="flex flex-wrap gap-2 list-none p-0 m-0">

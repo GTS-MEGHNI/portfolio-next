@@ -32,11 +32,13 @@ export function About() {
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              {stats.map((stat) => (
-                <div key={stat.label} className="bg-surface border border-border rounded-lg p-6">
-                  <p className="font-mono text-3xl font-bold text-accent mb-1">{stat.value}</p>
-                  <p className="text-sm text-muted">{stat.label}</p>
-                </div>
+              {stats.map((stat, i) => (
+                <AnimatedSection key={stat.label} delay={i * 100}>
+                  <div className="bg-surface border border-border rounded-lg p-6 h-full">
+                    <p className="font-mono text-4xl font-bold text-accent mb-1">{stat.value}</p>
+                    <p className="text-sm text-muted">{stat.label}</p>
+                  </div>
+                </AnimatedSection>
               ))}
             </div>
           </div>

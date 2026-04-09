@@ -16,7 +16,7 @@ const badgeColors: Record<string, string> = {
 
 function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   return (
-    <div className="bg-surface border border-border rounded-lg p-6 hover:border-accent transition-colors flex flex-col">
+    <div className="bg-surface border border-border rounded-lg p-6 hover:border-accent/60 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(34,211,238,0.08)] transition-all duration-200 flex flex-col">
       <div className="flex items-start justify-between gap-2 mb-3">
         <h3 className="font-semibold text-primary leading-snug">{project.title}</h3>
         {project.badge && (
@@ -62,7 +62,7 @@ export function Projects() {
             <div className="mt-12 flex justify-center">
               <button
                 onClick={() => setShowAll(true)}
-                className="px-4 py-2 rounded-lg border border-border text-sm font-medium text-primary hover:border-accent hover:text-accent transition-colors cursor-pointer"
+                className="px-4 py-2 rounded-lg border border-border text-sm font-medium text-primary hover:border-accent hover:text-accent transition-colors duration-200 cursor-pointer"
               >
                 Load more ({remaining})
               </button>

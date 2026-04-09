@@ -19,12 +19,12 @@ export function SocialSidebar() {
           aria-label={label}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-slate-400 hover:text-slate-200 transition-all duration-200 hover:-translate-y-[3px]"
+          className="text-muted hover:text-primary transition-all duration-200 hover:-translate-y-[3px]"
         >
           <Icon size={20} strokeWidth={1.5} />
         </a>
       ))}
-      <div className="w-px h-20 bg-slate-400" />
+      <div className="w-px h-20 bg-border" />
     </div>
   )
 }

@@ -14,10 +14,10 @@ export function Experience() {
             {experience.map((job, index) => (
               <div key={`${job.company}-${index}`} className="relative">
                 <span
-                  className="absolute -left-[38.5px] top-1.5 w-3 h-3 rounded-full border-2 border-accent bg-bg"
+                  className={`absolute -left-[38.5px] top-1.5 w-3 h-3 rounded-full ${index === 0 ? 'bg-accent shadow-[0_0_8px_rgba(34,211,238,0.6)]' : 'border-2 border-accent bg-bg'}`}
                   aria-hidden="true"
                 />
-                <div className={index === 0 ? 'p-6 bg-surface border border-border rounded-lg -ml-2' : ''}>
+                <div className={index === 0 ? 'p-6 bg-surface border border-border hover:border-accent/60 rounded-lg -ml-2 transition-colors duration-200' : 'hover:border-accent/60 transition-colors duration-200'}>
                   <div className="flex flex-wrap items-center gap-2 mb-1">
                     <h3 className="font-semibold text-primary text-lg">{job.role}</h3>
                     {job.type && (
