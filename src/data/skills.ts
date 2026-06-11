@@ -13,7 +13,7 @@ export const skills: SkillPillar[] = [
   {
     name: 'DevOps & Infra',
     icon: 'Cloud',
-    skills: ['Docker', 'Docker Compose', 'Nginx', 'Linux', 'CI/CD', 'GitHub Actions', 'VPS Management', 'SSL/TLS', 'Bash'],
+    skills: ['Docker', 'Docker Compose', 'Nginx', 'Linux', 'CI/CD', 'GitHub Actions', 'VPS Management', 'SSL/TLS', 'Bash', 'Beszel', 'Uptime Kuma'],
   },
   {
     name: 'Architecture',
