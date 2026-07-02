@@ -3,9 +3,9 @@ import { SectionLabel } from '@/components/ui/SectionLabel'
 
 const stats = [
   { value: '5+', label: 'years experience' },
-  { value: '5', label: 'VPS managed' },
+  { value: '11', label: 'VPS managed' },
   { value: '~95%', label: 'uptime maintained' },
-  { value: '7', label: 'articles written' },
+  { value: '8', label: 'articles written' },
 ]
 
 export function About() {
@@ -24,10 +24,10 @@ export function About() {
                   Mohamed El Amine Meghni is a Senior Backend Engineer with 5+ years of experience designing and shipping production-grade systems. Based in Algiers, Algeria, he works remotely with teams worldwide.
                 </p>
                 <p>
-                  He specialises in Laravel API architecture, DevOps infrastructure, and solution design — from first commit to production monitoring. He has managed 5 VPS environments, maintained ~95% uptime, and compressed deployment cycles from hours to minutes.
+                  He specialises in Laravel API architecture, DevOps infrastructure, and solution design — from first commit to production monitoring. He has managed 11 VPS environments, maintained ~95% uptime, and compressed deployment cycles from hours to minutes.
                 </p>
                 <p>
-                  Beyond engineering, Mohamed has written 7 technical articles and mentored junior engineers, believing that clear documentation and knowledge sharing are as important as clean code.
+                  Beyond engineering, Mohamed has written 8 technical articles and mentored junior engineers, believing that clear documentation and knowledge sharing are as important as clean code.
                 </p>
               </div>
             </div>

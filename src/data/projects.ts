@@ -9,6 +9,13 @@ export interface Project {
 
 export const projects: Project[] = [
     {
+        title: 'Insurance Company Platform Upgrade',
+        description:
+            'Upgraded an insurance company\'s .NET/React website by overhauling its CMS and integrating a new payment API, leveraging AI tooling to accelerate the upgrade, then re-architected and deployed the platform on new infrastructure for improved reliability, security, and performance.',
+        stack: ['.NET', 'React', 'Docker', 'Nginx', 'Linux', 'Jenkins', 'Ansible'],
+        badge: 'Client work',
+    },
+    {
         title: 'TM Agency — Credit & Benefits Platform',
         description:
             'Developed the backend and backoffice dashboard for a platform managing credit allocation to beneficiaries through enterprise conventions. Beneficiaries can spend allocated credits on physical goods or services via a mobile app, while the backoffice provides tools for managing enterprises, conventions, beneficiaries, and transaction tracking.',

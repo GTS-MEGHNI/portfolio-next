@@ -8,12 +8,12 @@ export const skills: SkillPillar[] = [
   {
     name: 'Backend',
     icon: 'Server',
-    skills: ['Laravel', 'PHP', 'Node.js', 'REST API', 'GraphQL', 'PostgreSQL', 'MySQL', 'SQL Server', 'Redis', 'WebSockets'],
+    skills: ['Laravel', 'NestJS', 'PHP', 'Node.js', 'REST API', 'GraphQL', 'PostgreSQL', 'MySQL', 'SQL Server', 'ClickHouse', 'Redis', 'WebSockets'],
   },
   {
     name: 'DevOps & Infra',
     icon: 'Cloud',
-    skills: ['Docker', 'Docker Compose', 'Nginx', 'Linux', 'CI/CD', 'GitHub Actions', 'VPS Management', 'SSL/TLS', 'Bash', 'Beszel', 'Uptime Kuma'],
+    skills: ['Docker', 'Docker Compose', 'Nginx', 'Linux', 'CI/CD', 'GitHub Actions', 'Ansible', 'VPS Management', 'SSL/TLS', 'Bash', 'Beszel', 'Uptime Kuma'],
   },
   {
     name: 'Architecture',

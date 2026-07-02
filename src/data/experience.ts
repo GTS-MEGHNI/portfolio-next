@@ -16,12 +16,13 @@ export const experience: Job[] = [
     location: 'Algiers — Remote',
     bullets: [
       'Started building full-stack Laravel projects, then shifted focus to backend engineering — REST API design, database modelling, and scalable system architecture — as the company moved toward larger, more complex products.',
-      'Took on DevOps responsibilities organically: provisioned and maintained <strong>5 Linux VPS environments</strong>, replaced manual SSH/FTP deployments with automated CI/CD pipelines (Jenkins, GitHub Actions, Slack alerts), <strong>cutting deployment time from ~2 hrs to minutes</strong>; implemented production monitoring (Beszel, Uptime Kuma) achieving <strong>~95% uptime</strong> across all environments.',
+      'Took on DevOps responsibilities organically: provisioned and maintained <strong>11 Linux VPS environments</strong>, replaced manual SSH/FTP deployments with automated CI/CD pipelines (Jenkins, GitHub Actions, Slack alerts), <strong>cutting deployment time from ~2 hrs to minutes</strong>; implemented production monitoring (Beszel, Uptime Kuma) achieving <strong>~95% uptime</strong> across all environments.',
       'Led solution architecture on 2 major projects — designed a scalable, multi-tier infrastructure separating application, cache, filesystem, and database layers, with isolated pre-production and production environments.',
       'Mentored 5+ junior developers on backend best practices, Git workflows, and branching policies; ran code reviews and contributed to scrum ceremonies.',
-      'Wrote <strong>7 technical articles</strong> for the Sadeem engineering blog covering backend architecture and DevOps best practices.',
+      'Wrote <strong>8 technical articles</strong> for the Sadeem engineering blog covering backend architecture and DevOps best practices.',
+      'Built an internal observability tool with NestJS, React, and TypeScript to centralize and track error logs across internal solutions, using ClickHouse for high-volume log storage, PostgreSQL, and Redis, integrated via an existing internal NestJS SDK.',
     ],
-    stack: ['Laravel', 'MySQL', 'PostgreSQL', 'Docker', 'Jenkins', 'GitHub Actions', 'Redis', 'Swagger', 'Linux', 'Nginx', 'Apache', 'TypeScript', 'Python', 'Express.js', 'Microsoft SQL Server', 'Beszel', 'Uptime Kuma'],
+    stack: ['Laravel', 'MySQL', 'PostgreSQL', 'Docker', 'Jenkins', 'GitHub Actions', 'Redis', 'Swagger', 'Linux', 'Nginx', 'Apache', 'TypeScript', 'Python', 'Express.js', 'Microsoft SQL Server', 'Beszel', 'Uptime Kuma', 'NestJS', 'React', 'ClickHouse'],
   },
   {
     company: 'Felhanout',
