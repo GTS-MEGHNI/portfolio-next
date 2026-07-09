@@ -1,11 +1,19 @@
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 
-const stats = [
-  { value: '5+', label: 'years experience' },
-  { value: '11', label: 'VPS managed' },
-  { value: '~95%', label: 'uptime maintained' },
-  { value: '8', label: 'articles written' },
+interface Metric {
+  key: string
+  value: string
+  label: string
+  /** Fill ratio (0–100) for the gauge bar — visual weight, not a literal percentage. */
+  bar: number
+}
+
+const stats: Metric[] = [
+  { key: 'years_experience', value: '5+', label: 'years experience', bar: 85 },
+  { key: 'vps_managed', value: '11', label: 'VPS managed', bar: 70 },
+  { key: 'uptime_pct', value: '~95%', label: 'uptime maintained', bar: 95 },
+  { key: 'articles_written', value: '8', label: 'articles written', bar: 55 },
 ]
 
 export function About() {
@@ -33,10 +41,17 @@ export function About() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {stats.map((stat, i) => (
-                <AnimatedSection key={stat.label} delay={i * 100}>
-                  <div className="bg-surface border border-border rounded-lg p-6 h-full">
-                    <p className="font-mono text-4xl font-bold text-accent mb-1">{stat.value}</p>
-                    <p className="text-sm text-muted">{stat.label}</p>
+                <AnimatedSection key={stat.key} delay={i * 100}>
+                  <div className="bg-surface border border-border rounded-lg p-5 h-full flex flex-col">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="font-mono text-xs text-muted tracking-wide">{stat.key}</span>
+                      <span className="h-1.5 w-1.5 rounded-full bg-accent/60" aria-hidden="true" />
+                    </div>
+                    <p className="font-mono text-3xl font-bold text-accent leading-none mb-1">{stat.value}</p>
+                    <p className="text-xs text-muted mb-4">{stat.label}</p>
+                    <div className="mt-auto h-1 w-full rounded-full bg-border/60 overflow-hidden" aria-hidden="true">
+                      <span className="block h-full rounded-full bg-accent/70" style={{ width: `${stat.bar}%` }} />
+                    </div>
                   </div>
                 </AnimatedSection>
               ))}

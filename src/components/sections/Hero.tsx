@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import { SITE, SOCIAL } from '@/lib/constants'
+import { StatusPill } from '@/components/ui/StatusPill'
+import { TerminalTagline } from '@/components/ui/TerminalTagline'
 import { ChevronDown } from 'lucide-react'
 
 export function Hero() {
@@ -50,9 +52,9 @@ export function Hero() {
           Senior Backend Engineer · DevOps · Solution Architecture
         </p>
 
-        <p className="hero-stagger-4 text-base sm:text-lg text-primary max-w-xl mx-auto mb-10">
-          I build scalable APIs, own production infrastructure, and ship end-to-end.
-        </p>
+        <div className="hero-stagger-4 mb-10">
+          <TerminalTagline />
+        </div>
 
         <div className="hero-stagger-5 flex flex-wrap items-center justify-center gap-4 mb-12">
           <a
@@ -73,7 +75,8 @@ export function Hero() {
           </a>
         </div>
 
-        <div className="hero-stagger-6">
+        <div className="hero-stagger-6 flex flex-wrap items-center justify-center gap-3">
+          <StatusPill />
           <span className="inline-block font-mono text-xs text-muted border border-border rounded-full px-4 py-1.5">
             Open to remote worldwide
           </span>

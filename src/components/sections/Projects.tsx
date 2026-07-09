@@ -16,9 +16,16 @@ const badgeColors: Record<string, string> = {
 
 function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   return (
-    <div className="bg-surface border border-border rounded-lg p-6 hover:border-accent/60 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(34,211,238,0.08)] transition-all duration-200 flex flex-col">
+    <div className="group bg-surface border border-border rounded-lg p-6 hover:border-accent/60 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(34,211,238,0.08)] transition-all duration-200 flex flex-col">
       <div className="flex items-start justify-between gap-2 mb-3">
-        <h3 className="font-semibold text-primary leading-snug">{project.title}</h3>
+        <div className="flex items-start gap-2 min-w-0">
+          <span
+            className={`mt-1.5 shrink-0 h-2 w-2 rounded-full ${project.url ? 'bg-emerald-400 shadow-[0_0_6px_rgba(52,211,153,0.6)]' : 'bg-muted/40'}`}
+            title={project.url ? 'Live' : 'Not public'}
+            aria-hidden="true"
+          />
+          <h3 className="font-semibold text-primary leading-snug">{project.title}</h3>
+        </div>
         {project.badge && (
           <span
             className={`shrink-0 font-mono text-xs border rounded px-2 py-0.5 ${badgeColors[project.badge] ?? 'text-muted border-border'}`}
@@ -36,6 +43,18 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
           </li>
         ))}
       </ul>
+      {project.url && (
+        <a
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Visit ${project.title} (opens in new tab)`}
+          className="mt-4 inline-flex items-center gap-1.5 font-mono text-xs text-muted hover:text-accent transition-colors duration-200"
+        >
+          <span className="h-px w-4 bg-border group-hover:bg-accent transition-colors duration-200" aria-hidden="true" />
+          visit ↗
+        </a>
+      )}
     </div>
   )
 }
@@ -46,7 +65,7 @@ export function Projects() {
   const remaining = projects.length - PAGE_SIZE
 
   return (
-    <section id="projects" aria-labelledby="projects-heading" className="py-24 px-6 bg-surface/30">
+    <section id="projects" aria-labelledby="projects-heading" className="py-24 px-6 bg-surface/30 bg-dot-grid">
       <div className="mx-auto max-w-5xl">
         <AnimatedSection>
           <SectionLabel id="projects-heading">Projects</SectionLabel>

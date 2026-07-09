@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic'
 import { Github, Linkedin } from 'lucide-react'
 import { Navbar } from '@/components/ui/Navbar'
+import { ScrollProgress } from '@/components/ui/ScrollProgress'
 import { Hero } from '@/components/sections/Hero'
 import { About } from '@/components/sections/About'
 import { Skills } from '@/components/sections/Skills'
@@ -21,6 +22,7 @@ export default function Home() {
       >
         Skip to main content
       </a>
+      <ScrollProgress />
       <Navbar />
       <main id="main-content">
         <Hero />
