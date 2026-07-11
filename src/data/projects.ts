@@ -3,11 +3,18 @@ export interface Project {
     description: string
     metric?: string
     stack: string[]
-    badge?: 'Client work' | 'Research' | 'Freelance' | 'Academic' | 'Open Source'
+    badge?: 'Client work' | 'Research' | 'Freelance' | 'Academic' | 'Open Source' | 'Internal tool'
     url?: string
 }
 
 export const projects: Project[] = [
+    {
+        title: 'Watchtower — Internal Observability Platform',
+        description:
+            'Built an internal observability tool to centralize and track error logs across the company\'s internal solutions. Ingests high-volume logs into ClickHouse, backed by PostgreSQL and Redis, and integrates with existing services through an internal NestJS SDK, giving engineers a single place to monitor and triage production errors.',
+        stack: ['NestJS', 'React', 'TypeScript', 'ClickHouse', 'PostgreSQL', 'Redis'],
+        badge: 'Internal tool',
+    },
     {
         title: 'Insurance Company Platform Upgrade',
         description:
@@ -42,7 +49,6 @@ export const projects: Project[] = [
             'Led deployment and DevOps for a digital academy platform by architecting system infrastructure with a focus on firewalls and reverse proxies. Streamlined operations and improved consistency through automation of package installations and application deployments using shell scripts.',
         stack: ['Linux', 'Docker', 'Nginx', 'Bash'],
         badge: 'Client work',
-        url: 'https://mobilis.dz/',
     },
     {
         title: 'Quality Control Dashboard',
@@ -50,7 +56,6 @@ export const projects: Project[] = [
             'Full-stack Laravel application for an industrial quality control system built with multitenancy support, Redis caching, and designed for horizontal scaling with multiple app instances.',
         stack: ['Laravel', 'Nginx', 'SQL Server', 'Redis', 'Docker'],
         badge: 'Client work',
-        url: 'https://www.sgt-pet.com/sgt-algerie',
     },
     {
         title: 'Loan Transactions & Backoffice API',
@@ -58,7 +63,6 @@ export const projects: Project[] = [
             'Developed a comprehensive API to handle daily online transactions and backoffice management operations. Supports secure transaction processing, user authentication, role-based access control, and seamless integration with front-end applications and third-party services.',
         stack: ['Laravel', 'Nginx', 'SQL Server', 'Docker', 'Redis', 'REST API'],
         badge: 'Client work',
-        url: 'https://www.angem.dz',
     },
     {
         title: 'QHSE Management System',
@@ -66,7 +70,6 @@ export const projects: Project[] = [
             'Developed a RESTful API for a QHSE system enabling users to submit hazard reports via a mobile app, with an admin web interface for hazard management, monitoring, and reporting. Supports secure data handling, user authentication, and role-based access control.',
         stack: ['Laravel', 'Nginx', 'Linux', 'SQL Server', 'REST API'],
         badge: 'Client work',
-        url: 'https://sarpi.dz',
     },
     {
         title: 'Clinic Meal Ticketing System',
@@ -74,7 +77,6 @@ export const projects: Project[] = [
             'Developed a system for clinic employees to scan QR codes and print meal tickets at self-service terminals. Included an admin dashboard for managing ticket records, generating usage statistics, and overseeing meal distribution operations.',
         stack: ['Laravel', 'MySQL', 'Node.js'],
         badge: 'Client work',
-        url: 'https://www.cliniquekhentouche.com/',
     },
     {
         title: 'Student Medical Records Management System',
@@ -82,7 +84,6 @@ export const projects: Project[] = [
             'Continued development and enhancement of an existing full-stack application managing student medical files and records. Improved the secure admin dashboard with features for better data management, user role control, and compliance with privacy standards.',
         stack: ['Laravel', 'MySQL'],
         badge: 'Client work',
-        url: 'https://www.ens-kouba.dz/arabic',
     },
     {
         title: 'Natural Beauty Products E-commerce',
@@ -90,7 +91,6 @@ export const projects: Project[] = [
             'Developed the full-stack customer website and admin dashboard for a natural beauty products brand, managing product listings and inventory. Delivered a responsive, SEO-friendly platform to enhance user experience and streamline business operations.',
         stack: ['Laravel', 'MySQL'],
         badge: 'Freelance',
-        url: 'https://jf-larose.com',
     },
     {
         title: 'Bio Groupe Website & Backoffice System',
@@ -98,7 +98,6 @@ export const projects: Project[] = [
             'Built a full-stack website and backoffice system for a laboratory group, providing an online platform alongside an admin dashboard for managing content, operations, and business workflows efficiently.',
         stack: ['Laravel', 'MySQL'],
         badge: 'Freelance',
-        url: 'https://laboratoiretarzaali.com',
     },
     {
         title: 'Future Power Store Website & Backoffice',
@@ -106,7 +105,6 @@ export const projects: Project[] = [
             'Developed a full-stack e-commerce website and backoffice system for an electrical equipment distributor. The platform enables online product browsing and purchase, complemented by an admin dashboard for inventory and order management.',
         stack: ['Laravel', 'MySQL'],
         badge: 'Freelance',
-        url: 'https://www.futurepowerstore.com',
     },
     {
         title: 'Felhanout — Restaurant Deals Platform',
@@ -114,7 +112,6 @@ export const projects: Project[] = [
             'Developed the backend for B2B and B2C restaurant deal applications. The B2B side equips restaurant owners with tools to manage discounts, launch loyalty programs, and create group-buying offers. The customer-facing app offers discovery of restaurants, exclusive deals, and seamless ordering.',
         stack: ['Laravel', 'MySQL', 'REST API'],
         badge: 'Freelance',
-        url: 'https://www.felhanout.dz',
     },
     {
         title: 'Sihaclub — Fitness & Wellness Platform',
@@ -122,7 +119,6 @@ export const projects: Project[] = [
             'Developed the backend for a web-based fitness platform serving clients and administrators. Offers personalised workout and nutrition programs across weight gain, weight loss, and maintenance categories. Backoffice enables management of user profiles, dietary plans, and program categories.',
         stack: ['Laravel', 'MySQL', 'Linux', 'REST API'],
         badge: 'Freelance',
-        url: 'https://sihaclub.com',
     },
     {
         title: 'Jexury — Online Jewelry Platform',
@@ -130,7 +126,6 @@ export const projects: Project[] = [
             'Developed the backend for an online jewelry sales platform supporting both customers and administrators. The customer app allows browsing, searching, and purchasing jewelry items. The backoffice provides tools for managing product inventory, categories, orders, and promotions.',
         stack: ['Laravel', 'MySQL', 'Linux', 'REST API'],
         badge: 'Freelance',
-        url: 'https://www.jexury.com',
     },
     {
         title: 'Numisky — Algeria Tourism Platform',
@@ -138,7 +133,6 @@ export const projects: Project[] = [
             'Developed the client-side of a web-based tourism platform focused on Algeria, enabling users to explore local destinations, discover attractions, and access travel information seamlessly.',
         stack: ['Laravel', 'MySQL', 'Linux'],
         badge: 'Freelance',
-        url: 'https://www.numisky.org',
     },
     /*{
         title: 'AI Citation Prediction',
@@ -164,7 +158,7 @@ export const projects: Project[] = [
         badge: 'Open Source',
         url: 'https://github.com/GTS-MEGHNI/SNDL-LOG-ANALYZER',
     },
-    /*{
+    {
         title: 'Compact Compiler',
         description:
             'Developed a compact compiler in C tailored for educational purposes, demonstrating understanding of programming language concepts, parsing, and code generation.',

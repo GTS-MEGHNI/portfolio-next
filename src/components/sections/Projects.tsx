@@ -12,6 +12,7 @@ const badgeColors: Record<string, string> = {
   'Client work': 'text-accent border-accent/40',
   'Research': 'text-muted border-border',
   'Freelance': 'text-primary border-border',
+  'Internal tool': 'text-emerald-400 border-emerald-400/40',
 }
 
 function ProjectCard({ project }: { project: (typeof projects)[number] }) {
