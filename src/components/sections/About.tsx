@@ -14,6 +14,7 @@ const stats: Metric[] = [
   { key: 'vps_managed', value: '11', label: 'VPS managed', bar: 70 },
   { key: 'uptime_pct', value: '~95%', label: 'uptime maintained', bar: 95 },
   { key: 'articles_written', value: '8', label: 'articles written', bar: 55 },
+  { key: 'oss_packages', value: '5', label: 'open source packages maintained', bar: 65 },
 ]
 
 export function About() {
@@ -35,13 +36,20 @@ export function About() {
                   He specialises in Laravel API architecture, DevOps infrastructure, and solution design — from first commit to production monitoring. He has managed 11 VPS environments, maintained ~95% uptime, and compressed deployment cycles from hours to minutes.
                 </p>
                 <p>
+                  He also maintains 5 open source packages for the Laravel, NestJS, and JavaScript ecosystems — covering Algerian SATIM card payments, CAPTCHA protection, and API boilerplate.
+                </p>
+                <p>
                   Beyond engineering, Mohamed has written 8 technical articles and mentored junior engineers, believing that clear documentation and knowledge sharing are as important as clean code.
                 </p>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
               {stats.map((stat, i) => (
-                <AnimatedSection key={stat.key} delay={i * 100}>
+                <AnimatedSection
+                  key={stat.key}
+                  delay={i * 100}
+                  className={i === stats.length - 1 && stats.length % 2 === 1 ? 'col-span-2' : undefined}
+                >
                   <div className="bg-surface border border-border rounded-lg p-5 h-full flex flex-col">
                     <div className="flex items-center justify-between mb-3">
                       <span className="font-mono text-xs text-muted tracking-wide">{stat.key}</span>

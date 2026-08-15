@@ -9,6 +9,46 @@ export interface Project {
 
 export const projects: Project[] = [
     {
+        title: 'nestjs-satim',
+        description:
+            'Open-source NestJS package for accepting CIB and Edahabia card payments through the Algerian SATIM gateway. Ships typed results, an ORM-agnostic audit trail, and multilingual receipts so teams can integrate national card payments without writing gateway plumbing.',
+        stack: ['NestJS', 'TypeScript', 'REST API'],
+        badge: 'Open Source',
+        url: 'https://github.com/GTS-MEGHNI/nestjs-satim',
+    },
+    {
+        title: 'laravel-satim',
+        description:
+            'Open-source Laravel package for accepting CIB and Edahabia card payments through the Algerian SATIM gateway, wrapping the full payment lifecycle behind a simple, framework-native API.',
+        stack: ['Laravel', 'PHP', 'REST API'],
+        badge: 'Open Source',
+        url: 'https://github.com/GTS-MEGHNI/laravel-satim',
+    },
+    {
+        title: 'laravel-essentials-kit',
+        description:
+            'Open-source Laravel starter kit that generates API boilerplate into your app as code you own: hardened defaults, a JSON response envelope, global exception rendering, curated packages, and quality gates wired in from the first commit.',
+        stack: ['Laravel', 'PHP', 'REST API'],
+        badge: 'Open Source',
+        url: 'https://github.com/GTS-MEGHNI/laravel-essentials-kit',
+    },
+    {
+        title: 'laravel-captcha',
+        description:
+            'Open-source Laravel package providing classic image-based CAPTCHA generation and validation, giving applications bot protection on forms without depending on a third-party service.',
+        stack: ['Laravel', 'PHP'],
+        badge: 'Open Source',
+        url: 'https://github.com/GTS-MEGHNI/laravel-captcha',
+    },
+    {
+        title: 'laravel-captcha-js',
+        description:
+            'Open-source JavaScript client for laravel-captcha, handling image CAPTCHA display and invisible proof-of-work solving in plain JavaScript, React, and Next.js applications.',
+        stack: ['TypeScript', 'React', 'Next.js'],
+        badge: 'Open Source',
+        url: 'https://github.com/GTS-MEGHNI/laravel-captcha-js',
+    },
+    {
         title: 'Watchtower — Internal Observability Platform',
         description:
             'Built an internal observability tool to centralize and track error logs across the company\'s internal solutions. Ingests high-volume logs into ClickHouse, backed by PostgreSQL and Redis, and integrates with existing services through an internal NestJS SDK, giving engineers a single place to monitor and triage production errors.',
