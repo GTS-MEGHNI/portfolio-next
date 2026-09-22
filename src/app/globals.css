@@ -1,145 +1,153 @@
 @import "tailwindcss";
 
+/* ── Operator console, daylight ───────────────────────────────
+   Graphite navigation, near-white sections, cool grey ground.
+   Colour encodes exactly one law: the kind of work.
+   ─────────────────────────────────────────────────────────── */
+
 :root {
-  --bg: #080f1a;
-  --surface: #0f1824;
-  --border: #1e2d42;
-  --accent: #22d3ee;
-  --accent-hover: #67e8f9;
-  --primary: #e2e8f0;
-  --muted: #94a3b8;
+  --chassis: #dde1e4;
+  --plate: #f7f8f8;
+  --plate-sunk: #eceef0;
+  --seam: #c3c9ce;
+  --edge: #737d86;
+  --rail: #262b30;
+  --rail-raised: #33393f;
+  --rail-text: #c5ccd2;
+  --text: #14181b;
+  --muted: #4f5961;
+
+  /* Kind of work */
+  --role-employment: #1f3fbf;
+  --role-oss: #b93d0b;
+  --role-client: #8a5b00;
+  --role-freelance: #0d6f67;
+  --role-none: #4a5259;
+
+  /* Indicator plane */
+  --led-on: #14a44d;
+  --led-on-glow: #5ee08f;
+  --led-off: #8d969d;
 }
 
 @theme inline {
-  --color-bg: var(--bg);
-  --color-surface: var(--surface);
-  --color-border: var(--border);
-  --color-accent: var(--accent);
-  --color-accent-hover: var(--accent-hover);
-  --color-primary: var(--primary);
+  --color-chassis: var(--chassis);
+  --color-plate: var(--plate);
+  --color-plate-sunk: var(--plate-sunk);
+  --color-seam: var(--seam);
+  --color-edge: var(--edge);
+  --color-rail: var(--rail);
+  --color-rail-raised: var(--rail-raised);
+  --color-rail-text: var(--rail-text);
+  --color-text: var(--text);
   --color-muted: var(--muted);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-jetbrains-mono);
-  --font-display: var(--font-space-grotesk);
-}
+  --color-role-employment: var(--role-employment);
+  --color-role-oss: var(--role-oss);
+  --color-role-client: var(--role-client);
+  --color-role-freelance: var(--role-freelance);
+  --color-role-none: var(--role-none);
+  --color-led-on: var(--led-on);
+  --color-led-off: var(--led-off);
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: var(--bg);
-  color: var(--primary);
-  font-family: var(--font-geist-sans), Arial, sans-serif;
-}
-
-h1, h2, h3, h4, h5 {
-  font-family: var(--font-space-grotesk), var(--font-geist-sans), Arial, sans-serif;
+  --font-sans: var(--font-barlow);
+  --font-label: var(--font-barlow-condensed);
+  --font-mono: var(--font-martian);
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+  background: var(--chassis);
+}
+
+body {
+  background: var(--chassis);
+  color: var(--text);
+  font-family: var(--font-barlow), system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-barlow-condensed), var(--font-barlow), sans-serif;
+  text-wrap: balance;
+}
+
+::selection {
+  background: var(--role-employment);
+  color: #fff;
+}
+
 :focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
+  outline: 2px solid var(--role-employment);
+  outline-offset: 3px;
 }
 
-/* ── Scroll-triggered animation ─────────────────────────────── */
-
-.scroll-hidden {
-  opacity: 0;
-  transform: translateY(24px);
+.on-rail :focus-visible {
+  outline-color: var(--led-on-glow);
 }
 
-.scroll-visible {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 500ms ease, transform 500ms ease;
+html {
+  scrollbar-color: var(--edge) var(--chassis);
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums slashed-zero;
+}
+
+/* Section being read: the navigation lights its LED. */
+.unit[data-active="true"] .unit-led {
+  background: var(--led-on);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--led-on) 25%, transparent), 0 0 8px var(--led-on-glow);
+}
+
+/* ── Motion ───────────────────────────────────────────────────
+   The timeline bars draw in once; the live LED breathes.
+   Transform and shadow only, so nothing is hidden before it moves.
+   ─────────────────────────────────────────────────────────── */
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50%      { opacity: 1;    transform: scale(1.35); }
+}
+
+@keyframes bar-in {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+.bar-in {
+  transform-origin: left center;
+  animation: bar-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(300ms + var(--i, 0) * 90ms);
+}
+
+.led-breathe {
+  position: relative;
+}
+
+/* The glow is a static shadow on a pseudo-element; only its opacity and
+   scale animate, so the pulse stays on the compositor and never repaints. */
+.led-breathe::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 9999px;
+  box-shadow: 0 0 8px 2px var(--led-on-glow);
+  animation: breathe 2.8s ease-in-out infinite;
+  will-change: opacity, transform;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .scroll-hidden {
-    opacity: 1;
-    transform: none;
-  }
-  .scroll-visible {
-    transition: none;
-  }
-}
-
-/* ── Hero stagger animations ─────────────────────────────────── */
-
-@keyframes heroReveal {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-stagger-1 { animation: heroReveal 0.6s ease both; animation-delay: 0ms; }
-.hero-stagger-2 { animation: heroReveal 0.6s ease both; animation-delay: 120ms; }
-.hero-stagger-3 { animation: heroReveal 0.6s ease both; animation-delay: 240ms; }
-.hero-stagger-4 { animation: heroReveal 0.6s ease both; animation-delay: 360ms; }
-.hero-stagger-5 { animation: heroReveal 0.6s ease both; animation-delay: 480ms; }
-.hero-stagger-6 { animation: heroReveal 0.6s ease both; animation-delay: 600ms; }
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-stagger-1,
-  .hero-stagger-2,
-  .hero-stagger-3,
-  .hero-stagger-4,
-  .hero-stagger-5,
-  .hero-stagger-6 {
+  html { scroll-behavior: auto; }
+  .bar-in,
+  .led-breathe::after {
     animation: none;
   }
-}
-
-/* ── Legacy fade-in (kept for compatibility) ─────────────────── */
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.5s ease both;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-fade-in {
-    animation: none;
-  }
-}
-
-/* ── Faint infra dot-grid for surface sections ───────────────── */
-
-.bg-dot-grid {
-  background-image: radial-gradient(circle at 1px 1px, rgba(34, 211, 238, 0.05) 1px, transparent 0);
-  background-size: 28px 28px;
-}
-
-/* ── Reduced-motion guard for built-in Tailwind loops ────────── */
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-ping,
-  .animate-bounce,
-  .animate-pulse {
-    animation: none;
-  }
-}
-
-/* ── Details/summary reset ───────────────────────────────────── */
-
-details > summary {
-  list-style: none;
-}
-
-details > summary::-webkit-details-marker {
-  display: none;
 }

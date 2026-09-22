@@ -1,69 +1,85 @@
 "use client"
 
-import { useState, useEffect } from 'react'
-import Image from 'next/image'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { X, Menu } from 'lucide-react'
+import { Download, Menu, X } from 'lucide-react'
+import { cn } from '@/lib/utils'
 import { SOCIAL } from '@/lib/constants'
+import { sections } from '@/data/sections'
 
-const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#contact', label: 'Contact' },
-]
+const navLinks = sections.filter((s) => s.id !== 'profile')
 
-export function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [activeId, setActiveId] = useState<string>('')
+/** Tracks which section is being read; lights its link and its header LED. */
+function useActiveSection(): string {
+  const [active, setActive] = useState<string>('profile')
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
-  }, [menuOpen])
-
-  useEffect(() => {
-    const sections = navLinks
-      .map((link) => document.getElementById(link.href.slice(1)))
+    const els = sections
+      .map((s) => document.getElementById(s.id))
       .filter((el): el is HTMLElement => el !== null)
 
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
-        if (visible[0]) setActiveId(visible[0].target.id)
+        for (const entry of entries) {
+          if (entry.isIntersecting) setActive(entry.target.id)
+        }
       },
-      { rootMargin: '-45% 0px -45% 0px', threshold: [0, 0.25, 0.5, 1] }
+      { rootMargin: '-40% 0px -55% 0px' }
     )
-
-    sections.forEach((section) => observer.observe(section))
+    els.forEach((el) => observer.observe(el))
     return () => observer.disconnect()
   }, [])
 
-  const closeMenu = () => setMenuOpen(false)
+  useEffect(() => {
+    sections.forEach((s) => {
+      const el = document.getElementById(s.id)
+      if (el) el.dataset.active = s.id === active ? 'true' : 'false'
+    })
+  }, [active])
+
+  return active
+}
+
+function Wordmark() {
+  return (
+    <Link
+      href="/"
+      prefetch={false}
+      className="font-label text-xl font-bold uppercase leading-none tracking-[0.04em] text-white"
+    >
+      Meghni
+    </Link>
+  )
+}
+
+export function Navbar() {
+  const active = useActiveSection()
+  const dialogRef = useRef<HTMLDialogElement>(null)
+
+  const openMenu = () => dialogRef.current?.showModal()
+  const closeMenu = () => dialogRef.current?.close()
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-bg/80 backdrop-blur-md">
-        <nav aria-label="Main navigation" className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-          <Link href="/" aria-label="Home" className="hover:opacity-80 transition-opacity" onClick={closeMenu}>
-            <Image src="/logo.svg" alt="MAM logo" width={32} height={32} priority />
-          </Link>
+      <header className="on-rail sticky top-0 z-40 bg-rail">
+        <nav
+          aria-label="Main navigation"
+          className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-5 sm:px-8"
+        >
+          <Wordmark />
 
-          {/* Desktop nav */}
-          <ul className="hidden md:flex items-center gap-6 list-none m-0 p-0">
+          <ul className="m-0 hidden list-none items-center gap-1 p-0 lg:flex">
             {navLinks.map((link) => {
-              const isActive = activeId === link.href.slice(1)
+              const isActive = active === link.id
               return (
-                <li key={link.href}>
+                <li key={link.id}>
                   <a
-                    href={link.href}
-                    aria-current={isActive ? 'true' : undefined}
-                    className={`text-sm transition-colors duration-200 relative after:absolute after:bottom-[-3px] after:left-0 after:h-px after:bg-accent after:transition-all after:duration-200 hover:after:w-full ${
-                      isActive ? 'text-accent after:w-full' : 'text-muted hover:text-accent after:w-0'
-                    }`}
+                    href={`#${link.id}`}
+                    aria-current={isActive ? 'location' : undefined}
+                    className={cn(
+                      'block rounded-[2px] px-3 py-2 text-[15px] font-medium transition-colors duration-150',
+                      isActive ? 'bg-rail-raised text-white' : 'text-rail-text hover:text-white'
+                    )}
                   >
                     {link.label}
                   </a>
@@ -72,68 +88,68 @@ export function Navbar() {
             })}
           </ul>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <a
               href={SOCIAL.resume}
-              aria-label="Download resume as PDF"
-              className="text-sm font-mono border border-accent text-accent hover:bg-accent hover:text-bg px-4 py-1.5 rounded transition-all duration-200"
+              className="inline-flex min-h-11 items-center gap-2 rounded-[2px] bg-plate px-4 text-[15px] font-semibold text-rail transition-colors duration-150 hover:bg-white"
             >
-              Resume ↓
+              <Download size={16} aria-hidden="true" />
+              Résumé
             </a>
-            {/* Mobile hamburger */}
             <button
-              className="md:hidden flex items-center justify-center text-muted hover:text-primary transition-colors p-1"
-              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-              onClick={() => setMenuOpen((v) => !v)}
+              type="button"
+              onClick={openMenu}
+              aria-haspopup="dialog"
+              className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-[2px] border border-rail-text/60 text-white lg:hidden"
             >
-              <Menu size={22} />
+              <Menu size={18} aria-hidden="true" />
+              <span className="sr-only">Open menu</span>
             </button>
           </div>
         </nav>
       </header>
 
-      {/* Mobile overlay menu */}
-      {menuOpen && (
-        <div
-          className="fixed inset-0 z-[60] bg-bg/95 backdrop-blur-md flex flex-col md:hidden"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Mobile navigation"
-        >
-          <div className="flex items-center justify-between px-6 py-4 border-b border-border">
-            <Link href="/" aria-label="Home" className="hover:opacity-80 transition-opacity" onClick={closeMenu}>
-              <Image src="/logo.svg" alt="MAM logo" width={32} height={32} />
-            </Link>
+      <dialog
+        ref={dialogRef}
+        aria-label="Menu"
+        onClick={(e) => {
+          if (e.target === e.currentTarget) closeMenu()
+        }}
+        className="on-rail m-0 ml-auto h-dvh max-h-none w-[min(20rem,100vw)] max-w-none bg-rail p-0 text-white backdrop:bg-rail/60 lg:hidden"
+      >
+        <div className="flex h-full flex-col px-5 py-3">
+          <div className="flex h-10 items-center justify-between">
+            <Wordmark />
             <button
-              className="text-muted hover:text-primary transition-colors p-1"
-              aria-label="Close menu"
+              type="button"
               onClick={closeMenu}
+              className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-[2px] text-rail-text hover:text-white"
             >
-              <X size={22} />
+              <X size={20} aria-hidden="true" />
+              <span className="sr-only">Close menu</span>
             </button>
           </div>
-          <nav className="flex flex-col items-center justify-center flex-1 gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={closeMenu}
-                className="text-2xl font-semibold text-primary hover:text-accent transition-colors duration-200"
-              >
-                {link.label}
-              </a>
-            ))}
-            <a
-              href={SOCIAL.resume}
-              onClick={closeMenu}
-              aria-label="Download resume as PDF"
-              className="mt-4 font-mono border border-accent text-accent hover:bg-accent hover:text-bg px-6 py-2 rounded transition-all duration-200"
-            >
-              Resume ↓
-            </a>
+          <nav aria-label="Main navigation" className="mt-6">
+            <ul className="m-0 list-none p-0">
+              {navLinks.map((link) => (
+                <li key={link.id} className="border-b border-rail-raised">
+                  <a
+                    href={`#${link.id}`}
+                    onClick={closeMenu}
+                    aria-current={active === link.id ? 'location' : undefined}
+                    className={cn(
+                      'block py-3.5 font-label text-2xl font-semibold uppercase tracking-[0.03em]',
+                      active === link.id ? 'text-white' : 'text-rail-text hover:text-white'
+                    )}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </nav>
         </div>
-      )}
+      </dialog>
     </>
   )
 }

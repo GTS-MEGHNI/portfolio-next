@@ -1,20 +1,67 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono, Space_Grotesk, JetBrains_Mono } from 'next/font/google'
+import { Barlow, Barlow_Condensed, Martian_Mono } from 'next/font/google'
 import './globals.css'
 import { SITE, SOCIAL } from '@/lib/constants'
-import { SocialSidebar } from '@/components/ui/SocialSidebar'
-import { EmailSidebar } from '@/components/ui/EmailSidebar'
 
-const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans', display: 'swap' })
-const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono', display: 'swap' })
-const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk', display: 'swap' })
-const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains-mono', display: 'swap' })
+const barlow = Barlow({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-barlow',
+  display: 'swap',
+})
+
+const barlowCondensed = Barlow_Condensed({
+  subsets: ['latin'],
+  weight: ['600', '700'],
+  variable: '--font-barlow-condensed',
+  display: 'swap',
+})
+
+const martian = Martian_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-martian',
+  display: 'swap',
+  // Readings only, never the LCP text: load it without competing with the preloads.
+  preload: false,
+})
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: SITE.name,
+  jobTitle: 'Senior Backend Engineer',
+  description:
+    'Senior Backend Engineer with 5+ years specializing in API design, DevOps, and solution architecture.',
+  url: SITE.url,
+  email: SITE.email,
+  sameAs: [SOCIAL.linkedin, SOCIAL.github],
+  knowsAbout: [
+    'Laravel',
+    'REST API',
+    'DevOps',
+    'Docker',
+    'CI/CD',
+    'Solution Architecture',
+    'Linux',
+    'PostgreSQL',
+  ],
+  availableLanguage: ['Arabic', 'French', 'English'],
+  homeLocation: { '@type': 'Place', name: 'Algiers, Algeria' },
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: SITE.title,
   description: SITE.description,
-  keywords: ['Senior Backend Engineer', 'Laravel', 'DevOps', 'Solution Architecture', 'Remote Backend Engineer', 'Algeria'],
+  keywords: [
+    'Senior Backend Engineer',
+    'Laravel',
+    'DevOps',
+    'Solution Architecture',
+    'Remote Backend Engineer',
+    'Algeria',
+  ],
   authors: [{ name: SITE.name }],
   openGraph: {
     type: 'profile',
@@ -25,51 +72,21 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
   },
-  other: {
-    'script:ld+json': JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'Person',
-      name: SITE.name,
-      jobTitle: 'Senior Backend Engineer',
-      description: 'Senior Backend Engineer with 5+ years specializing in API design, DevOps, and solution architecture.',
-      url: SITE.url,
-      email: SITE.email,
-      sameAs: [SOCIAL.linkedin, SOCIAL.github],
-      knowsAbout: ['Laravel', 'REST API', 'DevOps', 'Docker', 'CI/CD', 'Solution Architecture', 'Linux', 'PostgreSQL'],
-      availableLanguage: ['Arabic', 'French', 'English'],
-      homeLocation: { '@type': 'Place', name: 'Algiers, Algeria' },
-    }),
-  },
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
+    <html
+      lang="en"
+      className={`${barlow.variable} ${barlowCondensed.variable} ${martian.variable}`}
+    >
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Person',
-              name: SITE.name,
-              jobTitle: 'Senior Backend Engineer',
-              description: 'Senior Backend Engineer with 5+ years specializing in API design, DevOps, and solution architecture.',
-              url: SITE.url,
-              email: SITE.email,
-              sameAs: [SOCIAL.linkedin, SOCIAL.github],
-              knowsAbout: ['Laravel', 'REST API', 'DevOps', 'Docker', 'CI/CD', 'Solution Architecture', 'Linux', 'PostgreSQL'],
-              availableLanguage: ['Arabic', 'French', 'English'],
-              homeLocation: { '@type': 'Place', name: 'Algiers, Algeria' },
-            }),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
       </head>
-      <body className="antialiased">
-        {children}
-        <SocialSidebar />
-        <EmailSidebar />
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   )
 }

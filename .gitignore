@@ -41,3 +41,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# impeccable scratch (screenshots, backups, caches)
+.impeccable/review/
+.impeccable/backup/
+.impeccable/hook.cache.json

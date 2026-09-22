@@ -1,14 +1,10 @@
 export default function Loading() {
   return (
-    <main className="min-h-screen flex items-center justify-center px-6" aria-busy="true">
-      <div className="font-mono text-sm text-muted space-y-1">
-        <p>
-          <span className="text-emerald-400">●</span> starting portfolio.service …
-        </p>
-        <p className="text-muted/70">
-          <span className="animate-pulse">loading modules</span>
-        </p>
-      </div>
+    <main className="grid min-h-dvh place-items-center" aria-busy="true">
+      <p className="flex items-center gap-3 font-mono text-sm text-muted">
+        <span aria-hidden="true" className="led-breathe h-2.5 w-2.5 rounded-full bg-led-on" />
+        Loading
+      </p>
     </main>
   )
 }

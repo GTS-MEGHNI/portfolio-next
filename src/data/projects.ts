@@ -1,7 +1,6 @@
 export interface Project {
     title: string
     description: string
-    metric?: string
     stack: string[]
     badge?: 'Client work' | 'Research' | 'Freelance' | 'Academic' | 'Open Source' | 'Internal tool'
     url?: string
@@ -49,9 +48,9 @@ export const projects: Project[] = [
         url: 'https://github.com/GTS-MEGHNI/laravel-captcha-js',
     },
     {
-        title: 'Watchtower — Internal Observability Platform',
+        title: 'Watchtower — Observability Platform',
         description:
-            'Built an internal observability tool to centralize and track error logs across the company\'s internal solutions. Ingests high-volume logs into ClickHouse, backed by PostgreSQL and Redis, and integrates with existing services through an internal NestJS SDK, giving engineers a single place to monitor and triage production errors.',
+            'Built an observability platform to monitor production exceptions, errors, and logs across the solutions the company delivers to its clients. Ingests high-volume logs into ClickHouse, backed by PostgreSQL and Redis, and integrates with existing services through an SDK, giving engineers a single place to monitor and triage production errors.',
         stack: ['NestJS', 'React', 'TypeScript', 'ClickHouse', 'PostgreSQL', 'Redis'],
         badge: 'Internal tool',
     },
@@ -77,16 +76,9 @@ export const projects: Project[] = [
         badge: 'Client work',
     },
     {
-        title: 'Corporate Portal Deployment & DevOps',
+        title: 'Corporate Portal & Digital Academy — Deployment & DevOps',
         description:
-            'Led deployment and DevOps for a corporate portal by architecting system infrastructure with a focus on firewalls and reverse proxies. Streamlined operations and improved consistency through automation of package installations and application deployments using shell scripts.',
-        stack: ['Linux', 'Docker', 'Nginx', 'Bash'],
-        badge: 'Client work',
-    },
-    {
-        title: 'Digital Academy Deployment & DevOps',
-        description:
-            'Led deployment and DevOps for a digital academy platform by architecting system infrastructure with a focus on firewalls and reverse proxies. Streamlined operations and improved consistency through automation of package installations and application deployments using shell scripts.',
+            'Led deployment and DevOps for two platforms, a corporate portal and a digital academy, architecting their infrastructure around firewalls and reverse proxies. Automated package installation and application deployment with shell scripts for consistent, repeatable releases.',
         stack: ['Linux', 'Docker', 'Nginx', 'Bash'],
         badge: 'Client work',
     },
@@ -151,7 +143,7 @@ export const projects: Project[] = [
         description:
             'Developed the backend for B2B and B2C restaurant deal applications. The B2B side equips restaurant owners with tools to manage discounts, launch loyalty programs, and create group-buying offers. The customer-facing app offers discovery of restaurants, exclusive deals, and seamless ordering.',
         stack: ['Laravel', 'MySQL', 'REST API'],
-        badge: 'Freelance',
+        badge: 'Client work',
     },
     {
         title: 'Sihaclub — Fitness & Wellness Platform',
@@ -223,3 +215,11 @@ export const projects: Project[] = [
         url: 'https://github.com/GTS-MEGHNI/lychat',
     },*/
 ]
+
+/** Public packages, shown as the patch panel. */
+export const packages: Project[] = projects.filter((p) => p.badge === 'Open Source')
+
+/** Everything that is neither a public package nor a featured internal platform. */
+export const shipped: Project[] = projects.filter(
+    (p) => p.badge !== 'Open Source' && p.badge !== 'Internal tool'
+)

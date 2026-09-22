@@ -146,29 +146,29 @@ export default function Loading() {
 ## Performance
 
 ### Fonts
-- Geist Sans + Geist Mono loaded via `next/font/google` in `layout.tsx` — zero font flicker, self-hosted automatically by Next.js
-- Assign as CSS variables so Tailwind can reference them:
+- Three roles, all via `next/font/google` in `layout.tsx` — self-hosted, no flicker:
+  - **Archivo** (600/700/800) — display. Wide, signage-like, set tight (`-0.03em`)
+  - **IBM Plex Sans** (400/500/600) — body. Built for technical documentation
+  - **IBM Plex Mono** (400/500/600) — data, labels, eyebrows, chips
 ```ts
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Archivo, IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google'
 
-const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
-const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
-
-// Apply to <html>:
-// className={`${geistSans.variable} ${geistMono.variable}`}
+const archivo = Archivo({ subsets: ['latin'], weight: ['600','700','800'], variable: '--font-archivo', display: 'swap' })
+const plexSans = IBM_Plex_Sans({ subsets: ['latin'], weight: ['400','500','600'], variable: '--font-plex-sans', display: 'swap' })
+const plexMono = IBM_Plex_Mono({ subsets: ['latin'], weight: ['400','500','600'], variable: '--font-plex-mono', display: 'swap' })
 ```
 - Never import fonts via `<link>` or `@import` in CSS — always `next/font`
 
 ### Hero (above the fold)
-- Hero section is a Server Component — no `"use client"` — renders instantly
-- No images in Hero — pure text + CSS, nothing to preload
-- Framer Motion for Hero: use `animate` (not `whileInView`) since it's immediately visible — `whileInView` is for below-the-fold sections only
-- Avoid layout shift: set explicit `min-h-screen` on Hero, never depend on content height
+- Hero is a Server Component — no `"use client"`
+- The portrait is the only above-the-fold image; `next/image` with `priority`
+- Load animation is pure CSS (`.load-1` … `.load-5`), so nothing blocks paint
+- `EngagementChart` is computed at build time from `experience.ts` — no client work
 
 ### General
-- All sections are Server Components except those using Framer Motion hooks (`useReducedMotion`) — wrap only the animated wrapper `AnimatedSection` in `"use client"`, keep section content itself as RSC
+- All sections are Server Components except `Projects` (filter state) and `Navbar` (menu + observer)
+- Scroll reveals use `IntersectionObserver` + CSS classes — no animation library in the bundle
 - No third-party analytics scripts (keep it clean — add later if needed)
-- `next/image` not needed if no images — don't import it unnecessarily
 
 ---
 
@@ -313,17 +313,21 @@ jobs:
 ---
 
 ## Theme
-- **Mode:** Dark only (no toggle)
-- **Background:** `#0f1117`
-- **Surface:** `#1a1d27`
-- **Border:** `#2a2d3a`
-- **Accent:** `#1a5fa8`
-- **Accent hover:** `#1e6fc0`
-- **Text primary:** `#e2e8f0`
-- **Text muted:** `#94a3b8`
-- **Font mono:** Geist Mono — used for stack tags, section labels, metrics
+- **Mode:** Light document ground with ink panels bookending the page (hero, contact). No toggle.
+- **Paper:** `#eff1ec` — page ground
+- **Paper sunk:** `#e6e9e2` — alternating section ground (Stack, Catalogue)
+- **Ink:** `#13171a` — hero, contact, navbar
+- **Ink raised:** `#1c2226` — chart track
+- **Rule:** `#cdd2c9` (on paper) / `#2c3439` (on ink) — hairline dividers, the main structural device
+- **Text:** `#1a1f22` (on paper) / `#e8ebe5` (on ink)
+- **Muted:** `#5d665f` (on paper) / `#8d968c` (on ink)
+- **Signal:** `#0b6b3a` (on paper) / `#23c46e` (on ink) — the single accent
 
-Define all as CSS variables in `globals.css`.
+Green is semantic, not decorative: it is the "healthy service" colour of a monitoring board,
+and it doubles as a quiet nod to Algiers. `--amber: #a8701a` is reserved for a future warning state.
+
+Define all as CSS variables in `globals.css` and expose them through `@theme inline`.
+Surfaces carry no shadows, no gradients, and no border radius — hairlines do the separating.
 
 ---
 
@@ -332,68 +336,30 @@ Define all as CSS variables in `globals.css`.
 ```
 src/
 ├── app/
-│   ├── layout.tsx          # Root layout — metadata, fonts
+│   ├── layout.tsx          # Root layout — metadata, fonts, JSON-LD
 │   ├── page.tsx            # Composes all sections in order
-│   └── globals.css         # CSS variables, base styles
+│   └── globals.css         # CSS variables, base styles, load/scroll motion
 ├── components/
 │   ├── sections/
 │   │   ├── Hero.tsx
 │   │   ├── About.tsx
 │   │   ├── Skills.tsx
 │   │   ├── Experience.tsx
-│   │   ├── Projects.tsx
-│   │   └── Contact.tsx
+│   │   ├── Projects.tsx    # "use client" — filter + reveal state
+│   │   └── Contact.tsx     # Also carries the page footer
 │   └── ui/
-│       ├── Navbar.tsx      # Fixed top nav with section links
-│       ├── StackTag.tsx    # Reusable pill component for tech tags
-│       ├── SectionLabel.tsx # Monospace uppercase section titles
-│       └── AnimatedSection.tsx # Scroll-triggered fade-in wrapper
+│       ├── Navbar.tsx           # Fixed ink rail with section links
+│       ├── EngagementChart.tsx  # Signature element — career on one time axis
+│       ├── Chip.tsx             # Mono tag for stack entries
+│       ├── SectionHead.tsx      # Eyebrow + title + optional note
+│       └── AnimatedSection.tsx  # Scroll-triggered reveal wrapper
 ├── data/
-│   ├── experience.ts       # Experience data array
-│   ├── projects.ts         # Projects data array
+│   ├── experience.ts       # Experience array — includes `start`/`end`/`shortName` for the chart
+│   ├── projects.ts         # Projects array
 │   └── skills.ts           # Skills grouped by pillar
 └── lib/
-└── utils.ts            # cn() helper (clsx + tailwind-merge)
-```
-
----
-
-## Data Layer (`src/data/`)
-
-### `skills.ts`
-```ts
-export type SkillPillar = {
-  name: string
-  icon: string         // lucide icon name
-  skills: string[]
-}
-export const skills: SkillPillar[] = [ /* 3 pillars */ ]
-```
-
-### `experience.ts`
-```ts
-export type Job = {
-  company: string
-  role: string
-  type?: 'Contract' | 'Freelance' | 'Research'
-  period: string
-  location: string
-  bullets: string[]     // supports <strong> via dangerouslySetInnerHTML or mdx-lite
-  stack: string[]
-}
-export const experience: Job[] = [ /* 4 jobs */ ]
-```
-
-### `projects.ts`
-```ts
-export type Project = {
-  title: string
-  description: string
-  metric?: string       // e.g. "~95% uptime · 5 VPS environments"
-  stack: string[]
-  badge?: 'Client work' | 'Research' | 'Freelance'
-}
-export const projects: Project[] = [ /* 6 projects */ ]
+    ├── constants.ts        # SITE + SOCIAL
+    └── utils.ts            # cn() helper (clsx + tailwind-merge)
 ```
 
 ---
@@ -401,71 +367,78 @@ export const projects: Project[] = [ /* 6 projects */ ]
 ## Components Spec
 
 ### `Navbar.tsx`
-- Fixed top, `backdrop-blur`, border-bottom on scroll
-- Links: About · Skills · Experience · Projects · Contact
-- Right side: [Resume ↓] button (links to `/resume.pdf`)
-- Smooth scroll via `scroll-behavior: smooth` on `<html>`
-- Hides/shows on scroll direction (optional, implement last)
+- Fixed top, ink background, hairline bottom — reads as a document header rail over every section
+- Wordmark: green dot + `MEGHNI` in Archivo
+- Links (mono, uppercase, tracked): Record · Stack · Engagements · Catalogue · Contact
+- Active section highlighted in `signal-lit` via `IntersectionObserver`
+- Right side: `Résumé ↓` (links to `/resume.pdf`)
+- Mobile: full-screen ink overlay menu
+
+### `EngagementChart.tsx` — signature element
+- Server Component. Every engagement plotted on one shared time axis, overlaps included
+- Derived entirely from `experience.ts` (`start`, `end`, `shortName`); `end: null` means ongoing
+- Ongoing work renders bright, closed work dim — the convention a monitoring board uses
+- Bars grow left-to-right on load (`.rail-segment`), staggered; disabled under reduced motion
+- Axis: origin label at the first month, then a tick per January
 
 ### `AnimatedSection.tsx`
-- Wraps each section
-- Uses Framer Motion `whileInView` — fade up on enter
-- `viewport={{ once: true, margin: "-80px" }}`
+- Wraps sections and list items; `IntersectionObserver` + CSS classes, no animation library
+- Bails out entirely under `prefers-reduced-motion`
 
-### `StackTag.tsx`
+### `Chip.tsx`
 ```tsx
-// <StackTag label="Laravel" />
-// Small pill: Geist Mono, surface bg, border, muted text
+// <Chip label="Laravel" />  ·  <Chip label="Laravel" onInk />
+// Mono 11px, hairline border, muted text, square corners. One style, no colour coding.
 ```
 
-### `SectionLabel.tsx`
+### `SectionHead.tsx`
 ```tsx
-// <SectionLabel>Experience</SectionLabel>
-// Monospace, uppercase, letter-spaced, accent color, small
+// <SectionHead eyebrow="Catalogue" title="23 systems shipped." note="…" id="projects-heading" />
+// Hairline top rule, mono uppercase eyebrow in signal, Archivo extrabold title.
 ```
 
 ---
 
 ## Sections Spec
 
+The page reads as an operating record: an ink hero, three paper sections of evidence,
+and an ink contact panel closing it.
+
 ### `Hero.tsx`
-- Full viewport height (`min-h-screen`), centered content
-- Line 1: Name — large, bold, Geist Sans
-- Line 2: `Senior Backend Engineer · DevOps · Solution Architecture` — muted
-- Line 3: One-liner — *"I build scalable APIs, own production infrastructure, and ship end-to-end."*
-- CTAs: [Download Resume] (primary button → `/resume.pdf`) + [GitHub ↗] (ghost button)
-- Bottom: subtle "Open to remote worldwide" badge
-- Scroll-down chevron indicator at bottom center
+- Ink panel. Left-aligned — nothing is centred on this page
+- Meta bar: availability (green dot) · Algiers · UTC+1 · languages, with a small square
+  grayscale portrait at the right. Hairline underneath
+- `<h1>` carries both the name (mono eyebrow) and the claim:
+  *"Backend systems, and the infrastructure that keeps them up."* in Archivo extrabold
+- One paragraph of context, then `[Download résumé (PDF)]` + `[Read the code on GitHub]`
+- Closes with `EngagementChart` — the thesis, in data
+- Load sequence: `.load-1` … `.load-5`, then the chart bars
 
-### `About.tsx`
-- 2-column on desktop: left = text, right = quick-stats cards
-- Text: narrative paragraph (less formal than resume)
-- Stats cards (4): `5+ years` · `5 VPS managed` · `~95% uptime` · `7 articles written`
-- Each stat: large mono number + small label
+### `About.tsx` — eyebrow "Operating record"
+- 2-column: left = narrative in third person (kept for AEO), right = readout table
+- Readout rows are label · dotted leader · mono tabular value — a printed record, not stat cards
+- Values: 5+ years · 11 servers · 95% uptime · 2 h → min deploys · 5 packages · 8 articles · 5+ mentored
 
-### `Skills.tsx`
-- 3 cards side by side (stack on mobile): Backend · DevOps & Infra · Architecture
-- Each card: icon (lucide) + pillar name + skill list
-- No progress bars — just clean lists with StackTag pills
+### `Skills.tsx` — eyebrow "Stack"
+- Sunk paper ground. Three full-width strata separated by hairlines, read top to bottom:
+  Application tier · Infrastructure tier · Design tier
+- Each stratum: tier label, pillar name, entry count, then `Chip` list. No cards, no icons
 
-### `Experience.tsx`
-- Vertical timeline layout (left border line, dot per entry)
-- Each entry: role + company + period + location + bullets + StackTags
-- Sadeem entry is visually larger (current role)
-- `type` badge (Contract / Freelance / Research) shown inline with role
+### `Experience.tsx` — eyebrow "Engagements"
+- `<ol>` of entries, hairline separated. Left gutter (mono): current marker, period, location, type
+- Right column: role, company in signal, bullets marked with a hairline dash, `Chip` stack
+- `<strong>` inside bullets renders as full-contrast text — the numbers carry themselves
 
-### `Projects.tsx`
-- CSS Grid: 3 cols desktop, 2 tablet, 1 mobile
-- Each card: title + description + metric (if any, highlighted in accent) + stack tags + badge
-- Subtle `border` + `hover:border-accent` transition on cards
-- No links — "Client work / Research" badge explains absence
+### `Projects.tsx` — eyebrow "Catalogue"
+- Sunk paper ground. Dense list, not a card grid: 23 rows read as a package registry
+- Filter row (All / Open Source / Internal tool / Client work / Freelance) with live counts
+- Row: title (linked with `↗` when public) + badge + `Chip` stack on the left, description on the right
+- First 8 shown; `Show N more` reveals the rest
 
-### `Contact.tsx`
-- Centered, minimal
-- Heading: "Let's work together"
-- Sub: "Available for full-time remote roles worldwide"
-- 3 icon links: Email · LinkedIn · GitHub
-- No form (keep it simple)
+### `Contact.tsx` — eyebrow "Contact"
+- Ink panel mirroring the hero. Heading: *"Open to full-time remote roles, worldwide."*
+- Email as a large Archivo link, then mono links: LinkedIn ↗ · GitHub ↗ · Résumé (PDF) ↓ · phone
+- Footer lives inside this panel — copyright and colophon, no filler line
 
 ---
 

@@ -1,0 +1,550 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-22T21:03:21+00:00",
+  "title": "Design System: Meghni",
+  "extensions": {
+    "colorMeta": {
+      "chassis": {
+        "role": "neutral",
+        "displayName": "Chassis Grey",
+        "canonical": "oklch(90.8% 0.006 239.8)",
+        "tonalRamp": [
+          "#090c0d",
+          "#212427",
+          "#3d4043",
+          "#5b5e61",
+          "#7d8183",
+          "#a1a5a8",
+          "#c7cbce",
+          "#ebeff2"
+        ]
+      },
+      "plate": {
+        "role": "neutral",
+        "displayName": "Powder-Coat Plate",
+        "canonical": "oklch(97.8% 0.001 197.1)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#232424",
+          "#3f4040",
+          "#5d5e5e",
+          "#7f8080",
+          "#a4a5a5",
+          "#cacbcb",
+          "#eeefef"
+        ]
+      },
+      "plate-sunk": {
+        "role": "neutral",
+        "displayName": "Sunk Plate",
+        "canonical": "oklch(94.8% 0.003 247.9)",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#232426",
+          "#3e4041",
+          "#5c5e5f",
+          "#7f8082",
+          "#a3a5a7",
+          "#c9cbcd",
+          "#edeff1"
+        ]
+      },
+      "seam": {
+        "role": "neutral",
+        "displayName": "Hairline Seam",
+        "canonical": "oklch(83.3% 0.010 242.9)",
+        "tonalRamp": [
+          "#080c0f",
+          "#202528",
+          "#3b4044",
+          "#595e63",
+          "#7b8186",
+          "#a0a5aa",
+          "#c5cbd0",
+          "#e9eff5"
+        ]
+      },
+      "edge": {
+        "role": "neutral",
+        "displayName": "Machined Edge",
+        "canonical": "oklch(58.4% 0.018 245.3)",
+        "tonalRamp": [
+          "#050c12",
+          "#1d252c",
+          "#384149",
+          "#555f67",
+          "#78828b",
+          "#9ca6b0",
+          "#c1ccd6",
+          "#e5f0fa"
+        ]
+      },
+      "rail": {
+        "role": "neutral",
+        "displayName": "Graphite Rail",
+        "canonical": "oklch(28.6% 0.012 248.2)",
+        "tonalRamp": [
+          "#080c10",
+          "#202529",
+          "#3b4046",
+          "#595e64",
+          "#7b8187",
+          "#9fa5ac",
+          "#c5cbd2",
+          "#e9eff6"
+        ]
+      },
+      "rail-raised": {
+        "role": "neutral",
+        "displayName": "Raised Rail",
+        "canonical": "oklch(34.1% 0.013 248.2)",
+        "tonalRamp": [
+          "#070c11",
+          "#1f252a",
+          "#3a4047",
+          "#585e65",
+          "#7a8188",
+          "#9ea5ad",
+          "#c4cbd3",
+          "#e8eff7"
+        ]
+      },
+      "rail-text": {
+        "role": "neutral",
+        "displayName": "Rail Print",
+        "canonical": "oklch(84.2% 0.011 243.7)",
+        "tonalRamp": [
+          "#070c10",
+          "#1f2529",
+          "#3b4145",
+          "#585e64",
+          "#7b8187",
+          "#9fa6ab",
+          "#c4cbd1",
+          "#e8f0f6"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(20.6% 0.009 240.3)",
+        "tonalRamp": [
+          "#080c0e",
+          "#202528",
+          "#3c4044",
+          "#595e62",
+          "#7c8185",
+          "#a0a5a9",
+          "#c6cbd0",
+          "#eaeff4"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "canonical": "oklch(45.8% 0.018 242.1)",
+        "tonalRamp": [
+          "#050c12",
+          "#1c252c",
+          "#384149",
+          "#555f67",
+          "#77828a",
+          "#9ba6af",
+          "#c1ccd6",
+          "#e4f0fa"
+        ]
+      },
+      "silkscreen-white": {
+        "role": "neutral",
+        "displayName": "Silkscreen White",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#808080",
+          "#a4a4a4",
+          "#cacaca",
+          "#eeeeee"
+        ]
+      },
+      "role-employment": {
+        "role": "primary",
+        "displayName": "Cobalt Employment",
+        "canonical": "oklch(43.8% 0.202 266.3)",
+        "tonalRamp": [
+          "#010035",
+          "#060077",
+          "#1127a8",
+          "#294dcd",
+          "#4874f7",
+          "#7aa0ff",
+          "#b3caff",
+          "#e7effe"
+        ]
+      },
+      "role-oss": {
+        "role": "secondary",
+        "displayName": "Vermilion Open Source",
+        "canonical": "oklch(53.4% 0.168 38.2)",
+        "tonalRamp": [
+          "#1c0300",
+          "#441000",
+          "#712000",
+          "#a23100",
+          "#d05328",
+          "#fa7950",
+          "#ffb7a0",
+          "#fee9e3"
+        ]
+      },
+      "role-client": {
+        "role": "secondary",
+        "displayName": "Ochre Client Work",
+        "canonical": "oklch(51.0% 0.108 74.2)",
+        "tonalRamp": [
+          "#130900",
+          "#331f01",
+          "#583801",
+          "#7e5404",
+          "#a6752b",
+          "#cd9a52",
+          "#f5c078",
+          "#feebd3"
+        ]
+      },
+      "role-freelance": {
+        "role": "tertiary",
+        "displayName": "Teal Freelance & Research",
+        "canonical": "oklch(48.9% 0.083 185.9)",
+        "tonalRamp": [
+          "#000f0d",
+          "#012b27",
+          "#014b45",
+          "#066c64",
+          "#3b9087",
+          "#63b6ac",
+          "#89dcd2",
+          "#b8fff5"
+        ]
+      },
+      "role-none": {
+        "role": "neutral",
+        "displayName": "Reference Grey",
+        "canonical": "oklch(43.4% 0.015 244.5)",
+        "tonalRamp": [
+          "#060c11",
+          "#1e252b",
+          "#394148",
+          "#575f66",
+          "#798189",
+          "#9da6ae",
+          "#c2ccd4",
+          "#e6f0f8"
+        ]
+      },
+      "led-on": {
+        "role": "indicator",
+        "displayName": "Lit LED",
+        "canonical": "oklch(63.0% 0.169 149.9)",
+        "tonalRamp": [
+          "#001003",
+          "#012d10",
+          "#024e20",
+          "#057132",
+          "#049a46",
+          "#41c168",
+          "#6de98d",
+          "#c8ffd1"
+        ]
+      },
+      "led-on-glow": {
+        "role": "indicator",
+        "displayName": "LED Glow",
+        "canonical": "oklch(81.4% 0.163 153.3)",
+        "tonalRamp": [
+          "#001004",
+          "#002d14",
+          "#034d27",
+          "#00713b",
+          "#039952",
+          "#39c172",
+          "#68e997",
+          "#c7ffd6"
+        ]
+      },
+      "led-off": {
+        "role": "indicator",
+        "displayName": "Dark LED",
+        "canonical": "oklch(66.8% 0.015 241.1)",
+        "tonalRamp": [
+          "#060c11",
+          "#1e252b",
+          "#394147",
+          "#575f65",
+          "#798288",
+          "#9da6ad",
+          "#c2ccd3",
+          "#e6f0f8"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The engineer's name, the h1 on the top unit only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Unit names, always preceded by the unit's LED."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Headings inside a unit: engagement roles, sub-diagrams."
+      },
+      "silkscreen": {
+        "displayName": "Silkscreen",
+        "purpose": "Uppercase condensed labels: diagram nodes, definition terms, environment names."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Faceplate prose, 60-70ch."
+      },
+      "body-small": {
+        "displayName": "Body small",
+        "purpose": "Meta lines, captions, stack lists."
+      },
+      "reading": {
+        "displayName": "Reading",
+        "purpose": "Headline numeric readings."
+      },
+      "reading-small": {
+        "displayName": "Reading small",
+        "purpose": "Dates, IDs, counts."
+      },
+      "address": {
+        "displayName": "Address",
+        "purpose": "U numbers, port numbers, year ticks."
+      }
+    },
+    "shadows": [
+      {
+        "name": "faceplate-seam",
+        "value": "inset 0 1px 0 #fff, inset 0 -1px 0 var(--seam)",
+        "purpose": "Hairline seam on every faceplate at rest."
+      },
+      {
+        "name": "faceplate-highlight",
+        "value": "inset 0 0 0 2px var(--role-employment), inset 0 1px 0 #fff",
+        "purpose": "Unit outlined while its rail block is hovered or focused."
+      },
+      {
+        "name": "led-lit",
+        "value": "0 0 0 2px color-mix(in srgb, var(--led-on) 25%, transparent), 0 0 8px var(--led-on-glow)",
+        "purpose": "Halo of the LED on the unit being read."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-rack",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Exponential ease-out for every entrance."
+      },
+      {
+        "name": "rack-in",
+        "value": "translateX(-18px) to 0, 0.6s, stagger 70ms",
+        "purpose": "Units slide into the rails top to bottom on load."
+      },
+      {
+        "name": "block-in",
+        "value": "scaleX(0.2) to 1, 0.5s, 120ms + 45ms stagger",
+        "purpose": "Elevation map blocks mount."
+      },
+      {
+        "name": "bar-in",
+        "value": "scaleX(0) to 1, 0.8s, 300ms + 90ms stagger",
+        "purpose": "Timeline bars draw along the axis."
+      },
+      {
+        "name": "breathe",
+        "value": "2.8s ease-in-out infinite, glow 4px to 12px",
+        "purpose": "The live LED only."
+      },
+      {
+        "name": "state-transition",
+        "value": "150-300ms colour, filter and box-shadow",
+        "purpose": "Hover, highlight and LED lighting."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation: none; scroll-behavior: auto",
+        "purpose": "prefers-reduced-motion freezes all authored motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Graphite port for the one primary action, the résumé download.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/><path d=\"M7 10l5 5 5-5\"/><path d=\"M12 15V3\"/></svg>Download résumé (PDF)</a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 20px;border-radius:2px;background:var(--rail,#262b30);color:#fff;font-family:Barlow,system-ui,sans-serif;font-size:16px;font-weight:600;text-decoration:none;transition:background-color 150ms}.ds-btn-primary:hover{background:var(--role-employment,#1f3fbf)}.ds-btn-primary:focus-visible{outline:2px solid var(--role-employment,#1f3fbf);outline-offset:3px}"
+    },
+    {
+      "name": "Port Button",
+      "kind": "button",
+      "refersTo": "button-port",
+      "description": "Secondary port for contact channels: plate, machined-edge border.",
+      "html": "<a class=\"ds-btn-port\" href=\"#\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"2\" y=\"4\" width=\"20\" height=\"16\" rx=\"2\"/><path d=\"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7\"/></svg>Email</a>",
+      "css": ".ds-btn-port{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 16px;border-radius:2px;border:1px solid var(--edge,#737d86);background:var(--plate,#f7f8f8);color:var(--text,#14181b);font-family:Barlow,system-ui,sans-serif;font-size:16px;font-weight:600;text-decoration:none;transition:border-color 150ms,color 150ms}.ds-btn-port:hover{border-color:var(--role-employment,#1f3fbf);color:var(--role-employment,#1f3fbf)}.ds-btn-port:focus-visible{outline:2px solid var(--role-employment,#1f3fbf);outline-offset:3px}"
+    },
+    {
+      "name": "Elevation Map",
+      "kind": "nav",
+      "refersTo": "elevation-block-employment",
+      "description": "Rack elevation navigation: one role-coloured block per unit, sized by U height; the active block lit and outlined.",
+      "html": "<nav class=\"ds-elev\"><a class=\"ds-elev-block ds-none ds-active\" href=\"#\"><span class=\"ds-elev-name\"><span class=\"ds-elev-led\"></span>Profile</span><span class=\"ds-elev-u\">U42<br>5+ yrs</span></a><a class=\"ds-elev-block ds-emp\" style=\"flex-grow:8\" href=\"#\"><span class=\"ds-elev-name\"><span class=\"ds-elev-led\"></span>History</span><span class=\"ds-elev-u\">U36<br>4 engagements</span></a><a class=\"ds-elev-block ds-oss\" style=\"flex-grow:4\" href=\"#\"><span class=\"ds-elev-name\"><span class=\"ds-elev-led\"></span>Packages</span><span class=\"ds-elev-u\">U16</span></a><a class=\"ds-elev-block ds-client\" style=\"flex-grow:7\" href=\"#\"><span class=\"ds-elev-name\"><span class=\"ds-elev-led\"></span>Shipped</span><span class=\"ds-elev-u\">U12</span></a></nav>",
+      "css": ".ds-elev{display:flex;flex-direction:column;gap:3px;width:224px;height:360px;padding:12px;background:var(--rail,#262b30)}.ds-elev-block{flex:6 1 0;min-height:28px;display:flex;justify-content:space-between;align-items:flex-start;gap:8px;padding:6px 10px;border-radius:2px;color:#fff;text-decoration:none;transition:filter 200ms}.ds-elev-block:hover{filter:brightness(1.25)}.ds-elev-block:focus-visible{outline:2px solid #fff;outline-offset:2px}.ds-emp{background:var(--role-employment,#1f3fbf)}.ds-oss{background:var(--role-oss,#b93d0b)}.ds-client{background:var(--role-client,#8a5b00)}.ds-none{background:var(--role-none,#4a5259)}.ds-active{outline:2px solid #fff;outline-offset:2px}.ds-elev-name{display:flex;align-items:center;gap:8px;font-family:'Barlow Condensed',Barlow,sans-serif;font-size:15px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;line-height:1.25}.ds-elev-led{width:8px;height:8px;border-radius:50%;border:1px solid rgb(255 255 255/.6)}.ds-active .ds-elev-led{border:0;background:var(--led-on-glow,#5ee08f);box-shadow:0 0 6px var(--led-on-glow,#5ee08f)}.ds-elev-u{font-family:'Martian Mono',monospace;font-size:10px;line-height:1.25;text-align:right;font-variant-numeric:tabular-nums slashed-zero}"
+    },
+    {
+      "name": "Rack Unit",
+      "kind": "card",
+      "refersTo": "faceplate",
+      "description": "The page's one container: graphite ears with U numbers and cage nuts around a powder-coat faceplate; header with LED, headline, kind and reading.",
+      "html": "<section class=\"ds-unit\"><div class=\"ds-ear\"><span>U36</span><span>U29</span></div><div class=\"ds-plate\"><header class=\"ds-unit-head\"><div><div class=\"ds-unit-title\"><span class=\"ds-led-off\"></span><h2>History</h2></div><p>Four engagements since 2020.</p></div><span class=\"ds-unit-reading\">4 engagements</span></header><p class=\"ds-body\">Faceplate prose sits here in Barlow.</p></div><div class=\"ds-ear\"><span>U36</span><span>U29</span></div></section>",
+      "css": ".ds-unit{display:grid;grid-template-columns:2.5rem minmax(0,1fr) 2.5rem;background:var(--chassis,#dde1e4)}.ds-ear{display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:12px 0;background-color:var(--rail,#262b30);background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='16'%3E%3Crect x='3' y='5' width='6' height='6' fill='%2313171a'/%3E%3C/svg%3E\");background-repeat:repeat-y;background-position:center 4px;color:var(--rail-text,#c5ccd2);font-family:'Martian Mono',monospace;font-size:10px;line-height:1}.ds-ear span{background:var(--rail,#262b30);padding:4px 2px;border-radius:2px}.ds-plate{padding:48px 40px;background:var(--plate,#f7f8f8);box-shadow:inset 0 1px 0 #fff,inset 0 -1px 0 var(--seam,#c3c9ce);color:var(--text,#14181b)}.ds-plate:hover{box-shadow:inset 0 0 0 2px var(--role-employment,#1f3fbf),inset 0 1px 0 #fff}.ds-unit-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:40px;padding-bottom:24px;border-bottom:1px solid var(--seam,#c3c9ce)}.ds-unit-title{display:flex;align-items:center;gap:12px}.ds-unit-title h2{margin:0;font-family:'Barlow Condensed',Barlow,sans-serif;font-size:2.75rem;font-weight:700;line-height:1;text-transform:uppercase;letter-spacing:.01em}.ds-unit-head p,.ds-body{margin:12px 0 0;font-family:Barlow,system-ui,sans-serif;font-size:17px;line-height:1.6;color:var(--muted,#4f5961)}.ds-unit-reading{font-family:'Martian Mono',monospace;font-size:12px;font-variant-numeric:tabular-nums slashed-zero}.ds-led-off{width:10px;height:10px;border-radius:50%;border:2px solid var(--led-off,#8d969d)}"
+    },
+    {
+      "name": "LED Status",
+      "kind": "custom",
+      "refersTo": "led-on",
+      "description": "State indicator: filled green when on (live variant breathes), hollow ring when off, always beside a label.",
+      "html": "<div class=\"ds-leds\"><span class=\"ds-led-row\"><span class=\"ds-led ds-led-live\"></span>Running</span><span class=\"ds-led-row\"><span class=\"ds-led ds-led-dark\"></span>Ended</span></div>",
+      "css": ".ds-leds{display:flex;gap:24px;font-family:Barlow,system-ui,sans-serif;font-size:15px;font-weight:500;color:var(--text,#14181b)}.ds-led-row{display:flex;align-items:center;gap:8px}.ds-led{width:10px;height:10px;border-radius:50%;display:inline-block}.ds-led-live{background:var(--led-on,#14a44d);animation:ds-breathe 2.8s ease-in-out infinite}.ds-led-dark{border:2px solid var(--led-off,#8d969d)}@keyframes ds-breathe{0%,100%{box-shadow:0 0 0 2px color-mix(in srgb,var(--led-on,#14a44d) 22%,transparent),0 0 4px var(--led-on-glow,#5ee08f)}50%{box-shadow:0 0 0 3px color-mix(in srgb,var(--led-on,#14a44d) 12%,transparent),0 0 12px var(--led-on-glow,#5ee08f)}}@media (prefers-reduced-motion:reduce){.ds-led-live{animation:none}}"
+    },
+    {
+      "name": "Kind Chip",
+      "kind": "chip",
+      "refersTo": "elevation-block-client",
+      "description": "Role-coloured 10px square plus the kind in muted text; the legend and inventory mark for kind of work.",
+      "html": "<ul class=\"ds-kinds\"><li><span class=\"ds-kind ds-k-emp\"></span>Employment</li><li><span class=\"ds-kind ds-k-oss\"></span>Open source</li><li><span class=\"ds-kind ds-k-client\"></span>Client work</li><li><span class=\"ds-kind ds-k-free\"></span>Freelance &amp; research</li></ul>",
+      "css": ".ds-kinds{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 20px;font-family:Barlow,system-ui,sans-serif;font-size:14px;color:var(--muted,#4f5961)}.ds-kinds li{display:flex;align-items:center;gap:8px}.ds-kind{width:10px;height:10px;border-radius:1px}.ds-k-emp{background:var(--role-employment,#1f3fbf)}.ds-k-oss{background:var(--role-oss,#b93d0b)}.ds-k-client{background:var(--role-client,#8a5b00)}.ds-k-free{background:var(--role-freelance,#0d6f67)}"
+    },
+    {
+      "name": "Diagram Nodes",
+      "kind": "custom",
+      "refersTo": "node-core",
+      "description": "Architecture boxes: plain plate, core filled by kind of work, sunk-plate store; joined by edge-grey flow arrows.",
+      "html": "<div class=\"ds-flow\"><div class=\"ds-node\"><p class=\"ds-node-t\">Git push</p><p class=\"ds-node-d\">Branching policy, reviewed</p></div><svg class=\"ds-arrow\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg><div class=\"ds-node ds-node-core\"><p class=\"ds-node-t\">CI/CD</p><p class=\"ds-node-d\">Jenkins · GitHub Actions</p></div><svg class=\"ds-arrow\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg><div class=\"ds-node ds-node-store\"><p class=\"ds-node-t\">ClickHouse</p><p class=\"ds-node-d\">High-volume log storage</p></div></div>",
+      "css": ".ds-flow{display:flex;align-items:center;gap:8px;padding:16px;background:var(--plate,#f7f8f8)}.ds-node{padding:12px 14px;border-radius:2px;border:1px solid var(--edge,#737d86);background:var(--plate,#f7f8f8);color:var(--text,#14181b)}.ds-node-core{border-color:transparent;background:var(--role-employment,#1f3fbf);color:#fff}.ds-node-store{background:var(--plate-sunk,#eceef0)}.ds-node-t{margin:0;font-family:'Barlow Condensed',Barlow,sans-serif;font-size:17px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;line-height:1.25}.ds-node-d{margin:4px 0 0;font-family:Barlow,system-ui,sans-serif;font-size:14px;line-height:1.375;color:var(--muted,#4f5961)}.ds-node-core .ds-node-d{color:rgb(255 255 255/.9)}.ds-arrow{color:var(--edge,#737d86);flex-shrink:0}"
+    },
+    {
+      "name": "Engagement Timeline",
+      "kind": "custom",
+      "refersTo": "timeline-track",
+      "description": "Engagements on one axis: sunk-plate tracks, role-coloured bars, solid when ongoing, hatched when closed.",
+      "html": "<div class=\"ds-tl\"><div class=\"ds-tl-row\"><span class=\"ds-tl-name\">Sadeem</span><div class=\"ds-tl-track\"><span class=\"ds-tl-bar ds-k-emp\" style=\"left:30%;width:70%\"></span></div></div><div class=\"ds-tl-row\"><span class=\"ds-tl-name\">Contract</span><div class=\"ds-tl-track\"><span class=\"ds-tl-bar ds-k-client ds-tl-closed\" style=\"left:45%;width:25%\"></span></div></div><div class=\"ds-tl-row\"><span class=\"ds-tl-name\">Research</span><div class=\"ds-tl-track\"><span class=\"ds-tl-bar ds-k-free ds-tl-closed\" style=\"left:0;width:32%\"></span></div></div></div>",
+      "css": ".ds-tl{display:grid;gap:10px;padding:16px;background:var(--plate,#f7f8f8);font-family:Barlow,system-ui,sans-serif;font-size:15px;font-weight:500;color:var(--text,#14181b)}.ds-tl-row{display:flex;align-items:center}.ds-tl-name{width:7rem;flex-shrink:0}.ds-tl-track{position:relative;flex:1;height:20px;border-radius:2px;background:var(--plate-sunk,#eceef0)}.ds-tl-bar{position:absolute;top:0;bottom:0;border-radius:2px;transform-origin:left center;animation:ds-bar 0.8s cubic-bezier(0.16,1,0.3,1) both}.ds-k-emp{background-color:var(--role-employment,#1f3fbf)}.ds-k-client{background-color:var(--role-client,#8a5b00)}.ds-k-free{background-color:var(--role-freelance,#0d6f67)}.ds-tl-closed{background-image:repeating-linear-gradient(135deg,transparent 0 3px,rgb(255 255 255/.35) 3px 5px);opacity:.8}@keyframes ds-bar{from{transform:scaleX(0)}to{transform:scaleX(1)}}@media (prefers-reduced-motion:reduce){.ds-tl-bar{animation:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Daylight Rack Elevation",
+    "overview": "The whole page is one 42U server cabinet, standing in a daylit equipment room and read from the top down the way an operator reads it. Each section is a unit bolted between two graphite rails. The rails carry printed U numbers and square cage-nut holes, and every unit has a near-white powder-coat faceplate with a hairline seam where it meets the next one. On desktop a sticky graphite rail holds the elevation drawing: one coloured block per unit, sized to its true U height. That drawing is both the navigation and the page's only field of colour.\n\nIt is dense in the way equipment is dense. Every unit is named and numbered together, carries one numeric reading, and can be deep-linked by its address. The system works in three strict planes. The **rail plane** (graphite, U numbers, cage nuts) holds structure and addresses. The **faceplate plane** (powder-coat) holds all prose. The **indicator plane** (LEDs) holds state. Nothing decorative sits outside those three planes.\n\nThe world rejects the usual portfolio template (a hero over stacked sections with eyebrow labels and card grids) and the near-black neon dashboard. It is a daylight room, not a dark NOC.",
+    "keyCharacteristics": [
+      "A cool light-grey chassis ground with graphite rails and near-white faceplates. Colour appears only in the elevation map and in marks that encode the kind of work.",
+      "Barlow Condensed caps as silkscreen, Barlow for prose, Martian Mono for readings and addresses.",
+      "2px corners throughout. No drop shadows. Depth comes from inset seams and 3px graphite gaps.",
+      "State is shown by LED shape and a text label, never by colour alone.",
+      "A single authored motion: units rack in top to bottom and the live LED breathes. Reduced motion freezes both."
+    ],
+    "rules": [
+      {
+        "name": "The One Law Rule",
+        "body": "A hue means exactly one thing: the kind of work. Employment is cobalt, open source is vermilion, client work is ochre, freelance and research are teal. Hue fills appear only in elevation blocks, timeline bars, legend and kind chips, patch-port strips and a diagram's core node. They never decorate.",
+        "section": "colors"
+      },
+      {
+        "name": "The Lit LED Rule",
+        "body": "Green appears only on a lit LED and its glow. It never marks a link, a success state, text or a border.",
+        "section": "colors"
+      },
+      {
+        "name": "The Neutral Faceplate Rule",
+        "body": "Faceplates stay powder-coat (plate), with sunk plate for recesses. A faceplate is never tinted by its unit's kind of work. The unit's colour lives in the rail map and in small marks on the plate.",
+        "section": "colors"
+      },
+      {
+        "name": "The Interaction Borrow Rule",
+        "body": "Interaction state borrows cobalt, and only as a transient signal: the 2px focus outline (3px offset), text selection, the hover fill on the graphite primary button, the hover border and text on port buttons, and the 2px inset outline on a unit highlighted from the rail. At rest, cobalt outside employment marks is not part of the system.",
+        "section": "colors"
+      },
+      {
+        "name": "The Reading Rule",
+        "body": "Martian Mono is reserved for U numbers, dates, counts, IDs (A01, P01, HTTP 404) and package names, and it always carries `tabular-nums slashed-zero`. Prose, labels and names of things are never set in mono.",
+        "section": "typography"
+      },
+      {
+        "name": "The Silkscreen Rule",
+        "body": "Headings and labels are Barlow Condensed in caps. Headings use `text-wrap: balance`.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Eyebrow Rule",
+        "body": "Nothing sits above a heading except its LED. Context goes below the heading as a role line or summary, or to the right as the unit's reading.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Cabinet Rule",
+        "body": "Every section is a Unit: two ears, one faceplate, a U range, an address (`#id`) and a reading. A new section gets a row in the rack registry, and the heights must still total 42U.",
+        "section": "layout"
+      },
+      {
+        "name": "The Only Glow Rule",
+        "body": "An LED is the only thing that emits light. Surfaces never get ambient or offset shadows.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Rack-In Rule",
+        "body": "Motion is authored once. On load, units slide 18px into the rails (0.6s, `cubic-bezier(0.16, 1, 0.3, 1)`, staggered 70ms top to bottom). Rail blocks scale in from 0.2 and timeline bars scale in from 0. All three animate transform only, from a visible default, so nothing is hidden before it moves. The live LED breathes its glow on a 2.8s cycle. Everything else stays still apart from 150–300ms colour transitions on hover. `prefers-reduced-motion` switches off all four animations and smooth scrolling.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** mount every new section as a Unit with a registry entry, a U range, an address and a reading, keeping the cabinet at 42U.",
+      "**Do** colour a thing only by its kind of work, using the four role tokens and role-none for reference units.",
+      "**Do** pair every state colour with a shape or a word: filled or hollow LEDs, solid or hatched bars, a label beside the LED.",
+      "**Do** set every number, date, U address, ID and package name in Martian Mono with tabular, slashed-zero numerals.",
+      "**Do** separate units with the 3px raised-graphite gap and finish faceplates with the inset seam.",
+      "**Do** keep motion transform-only (plus the LED's glow), and disable it under reduced motion."
+    ],
+    "donts": [
+      "**Don't** tint a faceplate or its prose with a unit's role colour.",
+      "**Don't** use green for anything but a lit LED.",
+      "**Don't** put an eyebrow, kicker or label above a heading; only the unit's LED may precede it.",
+      "**Don't** set prose, labels or tool names in mono.",
+      "**Don't** add drop shadows, offset shadows or ambient glows; depth is inset seams and graphite gaps.",
+      "**Don't** round corners past 2px or use circles for anything but LEDs.",
+      "**Don't** animate opacity or layout to reveal content, and don't add motion beyond rack-in, block-in, bar-in and the breathing LED."
+    ]
+  }
+}

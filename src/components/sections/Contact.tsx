@@ -1,54 +1,67 @@
-import { AnimatedSection } from '@/components/ui/AnimatedSection'
-import { SectionLabel } from '@/components/ui/SectionLabel'
+import { ArrowUpRight, Download, Mail, Phone } from 'lucide-react'
 import { SITE, SOCIAL } from '@/lib/constants'
-import { Mail, Linkedin, Github } from 'lucide-react'
+import { Led, Unit, UnitHeader } from '@/components/ui/Unit'
+
+const links = [
+  { label: 'LinkedIn', href: SOCIAL.linkedin, icon: ArrowUpRight, external: true },
+  { label: 'GitHub', href: SOCIAL.github, icon: ArrowUpRight, external: true },
+  { label: SITE.phone, href: `tel:${SITE.phone.replace(/\s/g, '')}`, icon: Phone, external: false },
+]
 
 export function Contact() {
   return (
-    <section id="contact" aria-labelledby="contact-heading" className="py-24 px-6">
-      <div className="mx-auto max-w-xl text-center">
-        <AnimatedSection>
-          <SectionLabel id="contact-heading">Contact</SectionLabel>
-          <h2 className="text-3xl font-bold text-primary mb-4">Let&apos;s work together</h2>
-          <p className="text-muted mb-12">Available for full-time remote roles worldwide</p>
-          <div className="flex items-center justify-center gap-10 mb-10">
-            <a
-              href={`mailto:${SITE.email}`}
-              aria-label="Send email (opens mail client)"
-              className="flex flex-col items-center gap-3 text-muted hover:text-accent transition-colors duration-200"
-            >
-              <Mail size={28} aria-hidden="true" />
-              <span className="font-mono text-xs">Email</span>
-            </a>
-            <a
-              href={SOCIAL.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn profile (opens in new tab)"
-              className="flex flex-col items-center gap-3 text-muted hover:text-accent transition-colors duration-200"
-            >
-              <Linkedin size={28} aria-hidden="true" />
-              <span className="font-mono text-xs">LinkedIn</span>
-            </a>
-            <a
-              href={SOCIAL.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub profile (opens in new tab)"
-              className="flex flex-col items-center gap-3 text-muted hover:text-accent transition-colors duration-200"
-            >
-              <Github size={28} aria-hidden="true" />
-              <span className="font-mono text-xs">GitHub</span>
-            </a>
-          </div>
+    <Unit id="contact" labelledBy="contact-heading">
+      <UnitHeader
+        id="contact"
+        headingId="contact-heading"
+        title="Contact"
+        summary="Tell Mohamed what you are building and what keeps breaking. He replies within a day, in English, French or Arabic."
+      />
+
+      <p className="flex items-center gap-2 text-[15px] font-medium text-text">
+        <Led state="live" />
+        Available for full-time remote roles, worldwide
+      </p>
+
+      <a
+        href={`mailto:${SITE.email}`}
+        className="mt-5 inline-flex max-w-full items-center gap-3 text-lg font-semibold text-text underline decoration-edge decoration-2 underline-offset-[7px] transition-colors duration-150 hover:text-role-employment hover:decoration-role-employment sm:text-3xl"
+      >
+        <Mail size={26} aria-hidden="true" className="hidden shrink-0 sm:block" />
+        <span>
+          {SITE.email.split('@')[0]}@<wbr />
+          {SITE.email.split('@')[1]}
+        </span>
+      </a>
+
+      <ul className="m-0 mt-9 flex list-none flex-wrap gap-2.5 p-0">
+        <li>
           <a
-            href={`mailto:${SITE.email}`}
-            className="font-mono text-sm text-muted hover:text-accent transition-colors duration-200"
+            href={SOCIAL.resume}
+            className="inline-flex min-h-12 items-center gap-2.5 rounded-[2px] bg-rail px-5 font-semibold text-white transition-colors duration-150 hover:bg-role-employment"
           >
-            {SITE.email}
+            <Download size={18} aria-hidden="true" />
+            Download résumé (PDF)
           </a>
-        </AnimatedSection>
-      </div>
-    </section>
+        </li>
+        {links.map(({ label, href, icon: Icon, external }) => (
+          <li key={label}>
+            <a
+              href={href}
+              {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              className="inline-flex min-h-12 items-center gap-2 rounded-[2px] border border-edge px-4 font-semibold text-text transition-colors duration-150 hover:border-role-employment hover:text-role-employment"
+            >
+              <Icon size={17} aria-hidden="true" />
+              {label}
+              {external && <span className="sr-only">(opens in a new tab)</span>}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <footer className="mt-14 border-t border-seam pt-5 text-[14px] text-muted">
+        <p>© {new Date().getFullYear()} Mohamed El Amine Meghni · Algiers, Algeria</p>
+      </footer>
+    </Unit>
   )
 }
