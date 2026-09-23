@@ -33,14 +33,14 @@ export function Profile() {
             Mohamed El Amine Meghni
           </h1>
           <p className="mt-4 font-label text-2xl font-semibold uppercase tracking-[0.03em] text-role-employment sm:text-[1.75rem]">
-            Senior Backend Engineer
+            Engineering Leader · Backend &amp; Platform
           </p>
 
           <p className="mt-6 max-w-[62ch] text-lg leading-relaxed text-muted">
-            Mohamed leads backend architecture and infrastructure at Sadeem Informatique. He
-            designs the systems behind the company’s major projects, owns the 11 Linux servers and
-            the CI/CD pipelines that ship to them, reviews the team’s code and mentors its
-            developers.
+            Mohamed is Head of Engineering at Sadeem Informatique, where he leads architecture,
+            development, integration and DevOps. He writes the technical specifications and designs
+            the architecture of the company’s projects, owns the 11 Linux servers and the CI/CD
+            pipelines that ship to them, reviews the team’s code and mentors its developers.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-[15px] font-medium">

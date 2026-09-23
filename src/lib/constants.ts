@@ -1,8 +1,8 @@
 export const SITE = {
   url: 'https://mohamedelaminemeghni.com',
   name: 'Mohamed El Amine Meghni',
-  title: 'Mohamed El Amine Meghni — Senior Backend Engineer',
-  description: 'Senior Backend Engineer with 5+ years of experience in API design, DevOps, and solution architecture. Open to full-time remote roles worldwide.',
+  title: 'Mohamed El Amine Meghni — Engineering Leader · Backend & Platform',
+  description: 'Engineering leader with 5+ years in backend, platform and DevOps. Head of Engineering at Sadeem Informatique, leading architecture, development, integration and DevOps. Open to full-time remote roles worldwide.',
   email: 'meghni.mohamed.el.amine@gmail.com',
   phone: '+213 549 136 722',
 } as const

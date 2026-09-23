@@ -16,8 +16,8 @@
 export const SITE = {
   url: 'https://mohamedelaminemeghni.com',
   name: 'Mohamed El Amine Meghni',
-  title: 'Mohamed El Amine Meghni — Senior Backend Engineer',
-  description: 'Senior Backend Engineer with 5+ years of experience in API design, DevOps, and solution architecture. Open to full-time remote roles worldwide.',
+  title: 'Mohamed El Amine Meghni — Engineering Leader · Backend & Platform',
+  description: 'Engineering leader with 5+ years in backend, platform and DevOps. Head of Engineering at Sadeem Informatique, leading architecture, development, integration and DevOps. Open to full-time remote roles worldwide.',
   email: 'meghni.mohamed.el.amine@gmail.com',
   phone: '+213 549 136 722',
 } as const
@@ -60,7 +60,7 @@ export default function OGImage() {
         {SITE.name}
       </h1>
       <p style={{ color: '#1a5fa8', fontSize: 28, margin: 0 }}>
-        Senior Backend Engineer · DevOps · Solution Architecture
+        Engineering Leader · Backend & Platform
       </p>
       <p style={{ color: '#94a3b8', fontSize: 22, marginTop: 32 }}>
         Open to remote worldwide
@@ -445,8 +445,8 @@ and an ink contact panel closing it.
 ## SEO & Metadata (`layout.tsx`)
 ```ts
 export const metadata: Metadata = {
-  title: 'Mohamed El Amine Meghni — Senior Backend Engineer',
-  description: 'Senior Backend Engineer specializing in API design, DevOps, and solution architecture. Open to remote roles worldwide.',
+  title: 'Mohamed El Amine Meghni — Engineering Leader · Backend & Platform',
+  description: 'Engineering leader in backend, platform and DevOps. Head of Engineering at Sadeem Informatique. Open to remote roles worldwide.',
   openGraph: { /* same */ },
 }
 ```
@@ -460,9 +460,9 @@ export const metadata: Metadata = {
 **Metadata (`layout.tsx`)**
 ```ts
 export const metadata: Metadata = {
-  title: 'Mohamed El Amine Meghni — Senior Backend Engineer',
-  description: 'Senior Backend Engineer with 5+ years of experience in API design, DevOps, and solution architecture. Open to full-time remote roles worldwide.',
-  keywords: ['Senior Backend Engineer', 'Laravel', 'DevOps', 'Solution Architecture', 'Remote Backend Engineer', 'Algeria'],
+  title: 'Mohamed El Amine Meghni — Engineering Leader · Backend & Platform',
+  description: 'Engineering leader with 5+ years in backend, platform and DevOps. Head of Engineering at Sadeem Informatique, leading architecture, development, integration and DevOps. Open to full-time remote roles worldwide.',
+  keywords: ['Head of Engineering', 'Engineering Leader', 'Senior Backend Engineer', 'Laravel', 'DevOps', 'Solution Architecture', 'Remote Backend Engineer', 'Algeria'],
   authors: [{ name: 'Mohamed El Amine Meghni' }],
   canonical: SITE.url,
   openGraph: {
@@ -499,8 +499,8 @@ AEO targets AI search (ChatGPT, Perplexity, Google SGE) which pulls structured, 
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Mohamed El Amine Meghni",
-  "jobTitle": "Senior Backend Engineer",
-  "description": "Senior Backend Engineer with 5+ years specializing in API design, DevOps, and solution architecture.",
+  "jobTitle": "Head of Engineering",
+  "description": "Engineering leader with 5+ years in backend, platform and DevOps. Head of Engineering at Sadeem Informatique.",
   "url": "https://mohamedelaminemeghni.com",
   "email": "meghni.mohamed.el.amine@gmail.com",
   "sameAs": [
@@ -515,7 +515,7 @@ AEO targets AI search (ChatGPT, Perplexity, Google SGE) which pulls structured, 
 
 **AEO content rules**
 - Each section must contain self-contained, factual sentences — AI engines pull paragraphs verbatim
-- About section: write in third person *("Mohamed is a Senior Backend Engineer...")*  so it reads correctly when cited by an AI
+- About section: write in third person *("Mohamed is Head of Engineering at Sadeem Informatique...")*  so it reads correctly when cited by an AI
 - Use explicit numbers everywhere: "5+ years", "5 VPS", "~95% uptime", "2hrs → minutes", "1k+ users", "7 articles"
 - Avoid vague language ("worked on various projects") — be specific and attributable
 - Project cards: each description must answer *who built it, what it does, what the outcome was* in 2 sentences max

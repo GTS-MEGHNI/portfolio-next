@@ -18,12 +18,13 @@ export const experience: Job[] = [
   {
     company: 'Sadeem Informatique',
     shortName: 'Sadeem',
-    role: 'Senior Backend Engineer',
+    role: 'Head of Engineering',
     period: 'Apr 2024 — Present',
     start: '2024-04',
     end: null,
     location: 'Algiers — Remote',
     bullets: [
+      "Lead the technical department — architecture, development, integration, and DevOps — and write the technical specifications for the company's projects, designing their architecture before development starts.",
       'Started building full-stack Laravel projects, then shifted focus to backend engineering — REST API design, database modelling, and scalable system architecture — as the company moved toward larger, more complex products.',
       'Took on DevOps responsibilities organically: provisioned and maintained <strong>11 Linux VPS environments</strong>, replaced manual SSH/FTP deployments with automated CI/CD pipelines (Jenkins, GitHub Actions, Slack alerts), <strong>cutting deployment time from ~2 hrs to minutes</strong>; put every environment under production monitoring with Beszel and Uptime Kuma.',
       'Led solution architecture on 2 major projects — designed a scalable, multi-tier infrastructure separating application, cache, filesystem, and database layers, with isolated pre-production and production environments.',

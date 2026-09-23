@@ -30,7 +30,7 @@ export default function OGImage() {
               Mohamed El Amine Meghni
             </h1>
             <p style={{ color: '#1f3fbf', fontSize: 38, fontWeight: 700, margin: '18px 0 0', textTransform: 'uppercase' }}>
-              Senior Backend Engineer
+              Engineering Leader · Backend &amp; Platform
             </p>
           </div>
           <p style={{ color: '#4f5961', fontSize: 26, margin: 0 }}>

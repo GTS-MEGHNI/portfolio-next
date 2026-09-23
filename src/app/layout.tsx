@@ -30,9 +30,10 @@ const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: SITE.name,
-  jobTitle: 'Senior Backend Engineer',
+  jobTitle: 'Head of Engineering',
+  worksFor: { '@type': 'Organization', name: 'Sadeem Informatique' },
   description:
-    'Senior Backend Engineer with 5+ years specializing in API design, DevOps, and solution architecture.',
+    'Engineering leader with 5+ years in backend, platform and DevOps. Head of Engineering at Sadeem Informatique.',
   url: SITE.url,
   email: SITE.email,
   sameAs: [SOCIAL.linkedin, SOCIAL.github],
@@ -55,6 +56,8 @@ export const metadata: Metadata = {
   title: SITE.title,
   description: SITE.description,
   keywords: [
+    'Head of Engineering',
+    'Engineering Leader',
     'Senior Backend Engineer',
     'Laravel',
     'DevOps',
