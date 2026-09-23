@@ -37,7 +37,7 @@ export function Profile() {
           </p>
 
           <p className="mt-6 max-w-[62ch] text-lg leading-relaxed text-muted">
-            Mohamed is Head of Engineering at Sadeem Informatique, where he leads architecture,
+            Mohamed is CTO at Sadeem Informatique, where he leads architecture,
             development, integration and DevOps. He writes the technical specifications and designs
             the architecture of the company’s projects, owns the 11 Linux servers and the CI/CD
             pipelines that ship to them, reviews the team’s code and mentors its developers.

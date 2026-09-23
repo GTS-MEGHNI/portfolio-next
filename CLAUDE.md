@@ -84,5 +84,5 @@ Full technical spec in `docs/PORTFOLIO_SPEC.md`. Read it before making any chang
 
 ## Owner
 
-Mohamed El Amine Meghni — Engineering Leader · Backend & Platform (Head of Engineering @ Sadeem Informatique)  
+Mohamed El Amine Meghni — Engineering Leader · Backend & Platform (CTO @ Sadeem Informatique)  
 Resume: `/resume.pdf` | `/resume.html`

@@ -17,7 +17,7 @@ export const SITE = {
   url: 'https://mohamedelaminemeghni.com',
   name: 'Mohamed El Amine Meghni',
   title: 'Mohamed El Amine Meghni — Engineering Leader · Backend & Platform',
-  description: 'Engineering leader with 5+ years in backend, platform and DevOps. Head of Engineering at Sadeem Informatique, leading architecture, development, integration and DevOps. Open to full-time remote roles worldwide.',
+  description: 'Engineering leader with 5+ years in backend, platform and DevOps. CTO at Sadeem Informatique, leading architecture, development, integration and DevOps. Open to full-time remote roles worldwide.',
   email: 'meghni.mohamed.el.amine@gmail.com',
   phone: '+213 549 136 722',
 } as const
@@ -446,7 +446,7 @@ and an ink contact panel closing it.
 ```ts
 export const metadata: Metadata = {
   title: 'Mohamed El Amine Meghni — Engineering Leader · Backend & Platform',
-  description: 'Engineering leader in backend, platform and DevOps. Head of Engineering at Sadeem Informatique. Open to remote roles worldwide.',
+  description: 'Engineering leader in backend, platform and DevOps. CTO at Sadeem Informatique. Open to remote roles worldwide.',
   openGraph: { /* same */ },
 }
 ```
@@ -461,8 +461,8 @@ export const metadata: Metadata = {
 ```ts
 export const metadata: Metadata = {
   title: 'Mohamed El Amine Meghni — Engineering Leader · Backend & Platform',
-  description: 'Engineering leader with 5+ years in backend, platform and DevOps. Head of Engineering at Sadeem Informatique, leading architecture, development, integration and DevOps. Open to full-time remote roles worldwide.',
-  keywords: ['Head of Engineering', 'Engineering Leader', 'Senior Backend Engineer', 'Laravel', 'DevOps', 'Solution Architecture', 'Remote Backend Engineer', 'Algeria'],
+  description: 'Engineering leader with 5+ years in backend, platform and DevOps. CTO at Sadeem Informatique, leading architecture, development, integration and DevOps. Open to full-time remote roles worldwide.',
+  keywords: ['CTO', 'Engineering Leader', 'Senior Backend Engineer', 'Laravel', 'DevOps', 'Solution Architecture', 'Remote Backend Engineer', 'Algeria'],
   authors: [{ name: 'Mohamed El Amine Meghni' }],
   canonical: SITE.url,
   openGraph: {
@@ -499,8 +499,8 @@ AEO targets AI search (ChatGPT, Perplexity, Google SGE) which pulls structured, 
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Mohamed El Amine Meghni",
-  "jobTitle": "Head of Engineering",
-  "description": "Engineering leader with 5+ years in backend, platform and DevOps. Head of Engineering at Sadeem Informatique.",
+  "jobTitle": "Chief Technology Officer",
+  "description": "Engineering leader with 5+ years in backend, platform and DevOps. CTO at Sadeem Informatique.",
   "url": "https://mohamedelaminemeghni.com",
   "email": "meghni.mohamed.el.amine@gmail.com",
   "sameAs": [
@@ -515,7 +515,7 @@ AEO targets AI search (ChatGPT, Perplexity, Google SGE) which pulls structured, 
 
 **AEO content rules**
 - Each section must contain self-contained, factual sentences — AI engines pull paragraphs verbatim
-- About section: write in third person *("Mohamed is Head of Engineering at Sadeem Informatique...")*  so it reads correctly when cited by an AI
+- About section: write in third person *("Mohamed is CTO at Sadeem Informatique...")*  so it reads correctly when cited by an AI
 - Use explicit numbers everywhere: "5+ years", "5 VPS", "~95% uptime", "2hrs → minutes", "1k+ users", "7 articles"
 - Avoid vague language ("worked on various projects") — be specific and attributable
 - Project cards: each description must answer *who built it, what it does, what the outcome was* in 2 sentences max

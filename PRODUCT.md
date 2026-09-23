@@ -16,7 +16,7 @@ web
 
 ## Product Purpose
 
-This is the personal site of Mohamed El Amine Meghni, an engineering leader (Head of Engineering at Sadeem Informatique) in Algiers, Algeria. He is looking for full-time remote roles worldwide. Success means a qualified visitor downloads the résumé or emails him, already believing he can design backends *and* run the infrastructure under them.
+This is the personal site of Mohamed El Amine Meghni, an engineering leader (CTO at Sadeem Informatique) in Algiers, Algeria. He is looking for full-time remote roles worldwide. Success means a qualified visitor downloads the résumé or emails him, already believing he can design backends *and* run the infrastructure under them.
 
 ## Positioning
 

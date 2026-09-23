@@ -18,7 +18,7 @@ export const experience: Job[] = [
   {
     company: 'Sadeem Informatique',
     shortName: 'Sadeem',
-    role: 'Head of Engineering',
+    role: 'CTO',
     period: 'Apr 2024 — Present',
     start: '2024-04',
     end: null,
