@@ -41,7 +41,7 @@ export const sections: PageSection[] = [
   { id: 'profile', label: 'Profile', role: 'none', reading: '5+ yrs' },
   { id: 'experience', label: 'Experience', role: 'employment', reading: `${experience.length} engagements` },
   { id: 'watchtower', label: 'Watchtower', role: 'employment', reading: '3 stores' },
-  { id: 'infrastructure', label: 'Infrastructure', role: 'employment', reading: '11 servers' },
+  { id: 'infrastructure', label: 'Infrastructure', role: 'employment', reading: 'Linux VPS' },
   { id: 'open-source', label: 'Open source', role: 'oss', reading: `${packages.length} packages` },
   { id: 'projects', label: 'Projects', role: 'client', reading: `${shipped.length} systems` },
   { id: 'stack', label: 'Stack', role: 'none', reading: '3 tiers' },

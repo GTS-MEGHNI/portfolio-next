@@ -12,7 +12,7 @@ const readings: Reading[] = [
   { value: '5+ yrs', label: 'production backends' },
   { value: '2', label: 'solution architectures led' },
   { value: '5+', label: 'developers mentored' },
-  { value: '11', label: 'Linux servers owned' },
+  { value: '5', label: 'open-source packages' },
 ]
 
 const ports = [
@@ -39,7 +39,7 @@ export function Profile() {
           <p className="mt-6 max-w-[62ch] text-lg leading-relaxed text-muted">
             Mohamed is CTO at Sadeem Informatique, where he leads architecture,
             development, integration and DevOps. He writes the technical specifications and designs
-            the architecture of the company’s projects, owns the 11 Linux servers and the CI/CD
+            the architecture of the company’s projects, owns the Linux servers and the CI/CD
             pipelines that ship to them, reviews the team’s code and mentors its developers.
           </p>
 

@@ -5,7 +5,7 @@ const TIERS = ['Application', 'Cache', 'Filesystem', 'Database'] as const
 const ENVIRONMENTS = ['Pre-production', 'Production'] as const
 
 const readings = [
-  { label: 'Linux VPS environments provisioned and maintained', value: '11' },
+  { label: 'Environments provisioned and maintained', value: 'Linux VPS' },
   { label: 'Deploy time, manual SSH/FTP → pipeline', value: '~2 h → min' },
   { label: 'Major projects with architecture led', value: '2' },
   { label: 'Monitoring', value: 'Beszel · Uptime Kuma' },

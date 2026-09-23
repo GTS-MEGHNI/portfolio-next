@@ -22,7 +22,7 @@ This is the personal site of Mohamed El Amine Meghni, an engineering leader (CTO
 
 Presented as a **technical lead**, not an individual developer (owner, 2026-09-22: "presentation should be more technical lead, I'm not developing anything now"). Lead with architecture, infrastructure ownership, code review and mentoring; application code comes second.
 
-He is a backend engineer who ended up owning production. At Sadeem Informatique he runs 11 Linux VPS environments, built the CI/CD pipelines that deploy to them, and built Watchtower, the observability platform (NestJS, ClickHouse) that monitors production exceptions, errors and logs from the company's client solutions. He also maintains the open-source Laravel and NestJS packages for Algeria's national SATIM card payment gateway. Few other candidates can claim both the operator record and the SATIM packages.
+He is a backend engineer who ended up owning production. At Sadeem Informatique he runs the production Linux VPS environments, built the CI/CD pipelines that deploy to them, and built Watchtower, the observability platform (NestJS, ClickHouse) that monitors production exceptions, errors and logs from the company's client solutions. He also maintains the open-source Laravel and NestJS packages for Algeria's national SATIM card payment gateway. Few other candidates can claim both the operator record and the SATIM packages.
 
 ## Operating Context
 
@@ -35,7 +35,8 @@ He is a backend engineer who ended up owning production. At Sadeem Informatique 
 - Single-page Next.js 16 site (App Router, RSC, Tailwind v4), deployed as a standalone container on the owner's VPS. Conventions are in `CLAUDE.md`: Bun, `next/image`, `next/link`, no `tailwind.config.js`, RSC by default.
 - Static assets: `/resume.pdf`, `/resume.html`, `/profile.webp`.
 - One `<h1>`, `aria-labelledby` sections, a skip link, WCAG 2.1 AA, and reduced-motion support (repo spec).
-- Owner's decision (2026-09-22): **the "95% uptime" figure is dropped.** Lead with deploy time (~2 h to minutes), 11 servers and Watchtower instead.
+- Owner's decision (2026-09-22): **the "95% uptime" figure is dropped.** Lead with deploy time (~2 h to minutes), the Linux servers and Watchtower instead.
+- Owner's decision (2026-09-23): **never state the server count.** Say "Linux servers" / "Linux VPS environments" with no number.
 - Undecided: whether the phone number stays public, and whether the CERIST AI research role stays in the career timeline.
 
 ## Brand Commitments
@@ -48,7 +49,7 @@ He is a backend engineer who ended up owning production. At Sadeem Informatique 
 
 - `src/data/experience.ts`: 4 engagements with dates, bullets and stacks.
 - `src/data/projects.ts`: 23 projects. 5 are open source with public GitHub URLs, 1 is internal (Watchtower) and the rest are client or freelance.
-- Verified numbers: 5+ years; 11 Linux VPS environments; deploys cut from ~2 hrs to minutes; 5 OSS packages; 8 engineering articles; 5+ juniors mentored; one freelance platform grew past 1k users; solution architecture led on 2 major projects (multi-tier: app, cache, filesystem, DB; pre-prod and prod isolated).
+- Verified numbers: 5+ years; deploys cut from ~2 hrs to minutes; 5 OSS packages; 8 engineering articles; 5+ juniors mentored; one freelance platform grew past 1k users; solution architecture led on 2 major projects (multi-tier: app, cache, filesystem, DB; pre-prod and prod isolated).
 - Monitoring tools actually used: Beszel, Uptime Kuma. CI: Jenkins, GitHub Actions with Slack alerts.
 - **Absent, must not be fabricated:** live metrics from real servers, Watchtower ingest volumes or event counts, uptime or SLO percentages, client names beyond those in the data, testimonials, screenshots of Watchtower. Any illustrative telemetry must be clearly labeled as illustrative.
 

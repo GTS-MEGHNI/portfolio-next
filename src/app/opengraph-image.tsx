@@ -32,9 +32,10 @@ export default function OGImage() {
             <p style={{ color: '#1f3fbf', fontSize: 38, fontWeight: 700, margin: '18px 0 0', textTransform: 'uppercase' }}>
               Engineering Leader · Backend &amp; Platform
             </p>
+            <p style={{ color: '#4f5961', fontSize: 30, margin: '10px 0 0' }}>CTO @ Sadeem Informatique</p>
           </div>
           <p style={{ color: '#4f5961', fontSize: 26, margin: 0 }}>
-            Laravel · NestJS · 11 Linux servers · CI/CD · Observability — {SITE.url.replace('https://', '')}
+            Laravel · NestJS · Linux servers · CI/CD · Observability · {SITE.url.replace('https://', '')}
           </p>
         </div>
       </div>

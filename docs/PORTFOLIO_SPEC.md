@@ -417,7 +417,7 @@ and an ink contact panel closing it.
 ### `About.tsx` — eyebrow "Operating record"
 - 2-column: left = narrative in third person (kept for AEO), right = readout table
 - Readout rows are label · dotted leader · mono tabular value — a printed record, not stat cards
-- Values: 5+ years · 11 servers · 95% uptime · 2 h → min deploys · 5 packages · 8 articles · 5+ mentored
+- Values: 5+ years · 2 h → min deploys · 5 packages · 8 articles · 5+ mentored
 
 ### `Skills.tsx` — eyebrow "Stack"
 - Sunk paper ground. Three full-width strata separated by hairlines, read top to bottom:
